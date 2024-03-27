@@ -38,27 +38,27 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_Check = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dtp_Max = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtp_Min = new System.Windows.Forms.DateTimePicker();
+            this.rbtn_RangeNo = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.rbtn_RangeYes = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.rbtn_Male = new System.Windows.Forms.RadioButton();
             this.rbtn_Female = new System.Windows.Forms.RadioButton();
             this.rbtn_All = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.rbtn_RangeYes = new System.Windows.Forms.RadioButton();
-            this.rbtn_RangeNo = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtp_Min = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtp_Max = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_StudentList
@@ -166,6 +166,29 @@
             this.panel2.Size = new System.Drawing.Size(1000, 50);
             this.panel2.TabIndex = 5;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(587, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 36);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Print";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(295, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 36);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Save to file";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // btn_Check
             // 
             this.btn_Check.Location = new System.Drawing.Point(878, 29);
@@ -187,6 +210,94 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 82);
             this.panel1.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Purple;
+            this.panel4.Controls.Add(this.dtp_Max);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.dtp_Min);
+            this.panel4.Controls.Add(this.rbtn_RangeNo);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.rbtn_RangeYes);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(241, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(603, 82);
+            this.panel4.TabIndex = 5;
+            // 
+            // dtp_Max
+            // 
+            this.dtp_Max.CustomFormat = "mm/dd/yyyy";
+            this.dtp_Max.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Max.Location = new System.Drawing.Point(373, 42);
+            this.dtp_Max.Name = "dtp_Max";
+            this.dtp_Max.Size = new System.Drawing.Size(200, 27);
+            this.dtp_Max.TabIndex = 12;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(316, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 20);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "To";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(24, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 20);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "From";
+            // 
+            // dtp_Min
+            // 
+            this.dtp_Min.CustomFormat = "mm/dd/yyyy";
+            this.dtp_Min.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Min.Location = new System.Drawing.Point(89, 40);
+            this.dtp_Min.Name = "dtp_Min";
+            this.dtp_Min.Size = new System.Drawing.Size(200, 27);
+            this.dtp_Min.TabIndex = 8;
+            // 
+            // rbtn_RangeNo
+            // 
+            this.rbtn_RangeNo.AutoSize = true;
+            this.rbtn_RangeNo.Checked = true;
+            this.rbtn_RangeNo.ForeColor = System.Drawing.Color.White;
+            this.rbtn_RangeNo.Location = new System.Drawing.Point(409, 6);
+            this.rbtn_RangeNo.Name = "rbtn_RangeNo";
+            this.rbtn_RangeNo.Size = new System.Drawing.Size(51, 24);
+            this.rbtn_RangeNo.TabIndex = 7;
+            this.rbtn_RangeNo.TabStop = true;
+            this.rbtn_RangeNo.Text = "No";
+            this.rbtn_RangeNo.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(142, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Use datetime range?";
+            // 
+            // rbtn_RangeYes
+            // 
+            this.rbtn_RangeYes.AutoSize = true;
+            this.rbtn_RangeYes.ForeColor = System.Drawing.Color.White;
+            this.rbtn_RangeYes.Location = new System.Drawing.Point(330, 6);
+            this.rbtn_RangeYes.Name = "rbtn_RangeYes";
+            this.rbtn_RangeYes.Size = new System.Drawing.Size(58, 24);
+            this.rbtn_RangeYes.TabIndex = 0;
+            this.rbtn_RangeYes.Text = "Yes";
+            this.rbtn_RangeYes.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -236,117 +347,6 @@
             this.rbtn_All.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtn_All.UseVisualStyleBackColor = true;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Purple;
-            this.panel4.Controls.Add(this.dtp_Max);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.dtp_Min);
-            this.panel4.Controls.Add(this.rbtn_RangeNo);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.rbtn_RangeYes);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(241, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(603, 82);
-            this.panel4.TabIndex = 5;
-            // 
-            // rbtn_RangeYes
-            // 
-            this.rbtn_RangeYes.AutoSize = true;
-            this.rbtn_RangeYes.ForeColor = System.Drawing.Color.White;
-            this.rbtn_RangeYes.Location = new System.Drawing.Point(330, 6);
-            this.rbtn_RangeYes.Name = "rbtn_RangeYes";
-            this.rbtn_RangeYes.Size = new System.Drawing.Size(58, 24);
-            this.rbtn_RangeYes.TabIndex = 0;
-            this.rbtn_RangeYes.Text = "Yes";
-            this.rbtn_RangeYes.UseVisualStyleBackColor = true;
-            // 
-            // rbtn_RangeNo
-            // 
-            this.rbtn_RangeNo.AutoSize = true;
-            this.rbtn_RangeNo.Checked = true;
-            this.rbtn_RangeNo.ForeColor = System.Drawing.Color.White;
-            this.rbtn_RangeNo.Location = new System.Drawing.Point(409, 6);
-            this.rbtn_RangeNo.Name = "rbtn_RangeNo";
-            this.rbtn_RangeNo.Size = new System.Drawing.Size(51, 24);
-            this.rbtn_RangeNo.TabIndex = 7;
-            this.rbtn_RangeNo.TabStop = true;
-            this.rbtn_RangeNo.Text = "No";
-            this.rbtn_RangeNo.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(142, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Use datetime range?";
-            // 
-            // dtp_Min
-            // 
-            this.dtp_Min.CustomFormat = "mm/dd/yyyy";
-            this.dtp_Min.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_Min.Location = new System.Drawing.Point(89, 40);
-            this.dtp_Min.Name = "dtp_Min";
-            this.dtp_Min.Size = new System.Drawing.Size(200, 27);
-            this.dtp_Min.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(24, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 20);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "From";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(316, 45);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 20);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "To";
-            // 
-            // dtp_Max
-            // 
-            this.dtp_Max.CustomFormat = "mm/dd/yyyy";
-            this.dtp_Max.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_Max.Location = new System.Drawing.Point(373, 42);
-            this.dtp_Max.Name = "dtp_Max";
-            this.dtp_Max.Size = new System.Drawing.Size(200, 27);
-            this.dtp_Max.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(295, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 36);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Save to file";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(587, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 36);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Print";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button1_Click);
-            // 
             // PrinterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -356,16 +356,16 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PrinterForm";
             this.Text = "PrinterForm";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
