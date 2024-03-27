@@ -73,5 +73,29 @@ namespace textPicture
         {
 
         }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCourse addCourse = new AddCourse();
+            this.Hide();
+            addCourse.ShowDialog();
+            this.Show();
+        }
+
+        private void removeCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteCourseForm delCourseForm = new DeleteCourseForm();
+            this.Hide();
+            delCourseForm.ShowDialog();
+            this.Show();
+        }
+
+        private void editCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditCourseForm editForm = new EditCourseForm();
+            this.Hide();
+            editForm.ShowDialog();
+            this.Show();
+        }
     }
 }

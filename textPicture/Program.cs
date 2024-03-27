@@ -16,7 +16,7 @@ namespace textPicture
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrinterForm());
+            Application.Run(new MainForm("user"));
 
             //Application.Run(new AdminForm());
         }
