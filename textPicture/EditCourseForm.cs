@@ -22,6 +22,7 @@ namespace textPicture
 
         private void EditForm_Load(object sender, EventArgs e)
         {
+            //numeric 
             neud_pe.Minimum = 10;
 
             string query = "select id from Course";
