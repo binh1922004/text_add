@@ -29,6 +29,7 @@ namespace textPicture
             string FirstName = txtFirstName.Text.Trim();
             string LastName = txtLastName.Text.Trim();
             string BirthDate = dtpBirth.Text.Trim();
+            MessageBox.Show(BirthDate);
             string Gender = "Male";
             if (rbtnFemale.Checked)
             {

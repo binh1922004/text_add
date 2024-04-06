@@ -71,7 +71,10 @@ namespace textPicture
 
         private void imporStudentLítToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ImportStudentForm importStudentForm = new ImportStudentForm();
+            this.Hide();
+            importStudentForm.ShowDialog();
+            this.Show();
         }
 
         private void addToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,6 +99,46 @@ namespace textPicture
             this.Hide();
             editForm.ShowDialog();
             this.Show();
+        }
+
+        private void manageCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageCourseForm manageCourse = new ManageCourseForm();
+            this.Hide();
+            manageCourse.ShowDialog();
+            this.Show();
+        }
+
+        private void printToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PrintCourseForm printCourse = new PrintCourseForm();
+            this.Hide();
+            printCourse.ShowDialog();
+            this.Show();
+        }
+
+        private void addScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddScoreForm addScoreForm = new AddScoreForm();
+            this.Hide();
+            addScoreForm.ShowDialog();
+            this.Show();
+        }
+
+        private void avgScoreByCouseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AvgScoreByCouse avgScoreByCouse = new AvgScoreByCouse();
+            this.Hide();
+            avgScoreByCouse.ShowDialog();
+            this.Show();
+        }
+
+        private void manageScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageScoreForm manageScoreForm = new ManageScoreForm();
+            this.Hide();
+            manageScoreForm.ShowDialog();
+                this.Show();
         }
     }
 }

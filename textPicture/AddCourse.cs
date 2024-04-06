@@ -16,6 +16,11 @@ namespace textPicture
         public AddCourse()
         {
             InitializeComponent();
+            List<int> semester = new List<int>();
+            semester.Add(1);
+            semester.Add(2);
+            semester.Add(3);
+            cbb_Semester.DataSource = semester;
         }
 
         private void btn_Add_Click(object sender, EventArgs e)

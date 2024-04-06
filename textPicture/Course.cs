@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,9 @@ namespace textPicture
     internal class Course
     {
         private MyDB db = new MyDB();
+        SqlDataAdapter adapter;
+        SqlCommandBuilder builder;
+        DataSet ds;
         #region checkdata
         public bool checkCourseName(string id, string courseName)
         {
@@ -28,16 +32,27 @@ namespace textPicture
             }
             reader.Close();
             db.CloseConnection();
-            return ck; 
+            return ck;
 
         }
+        public bool verif(string id, string courseName, int period, string des)
+        {
+            if (id.Trim() == "" || courseName.Trim() == "" || des.Trim() == "")
+                return false;
 
+            return true;
+        }
         #endregion checkdata
         public bool insertCourse(string id, string courseName, int period, string des)
         {
             if (!checkCourseName(id, courseName))
             {
                 MessageBox.Show("Please not enter duplicated course");
+                return false;
+            }
+            else if (verif(id, courseName, period, des) == false)
+            {
+                MessageBox.Show("Invalid value input");
                 return false;
             }
             string query = "insert into Course values(@cid, @cname, @cperiod, @cdes)";
@@ -58,7 +73,7 @@ namespace textPicture
                 return false;
             }
         }
-        
+
         public void deleteCourse(string id)
         {
             try
@@ -110,5 +125,42 @@ namespace textPicture
             }
         }
 
+        public DataSet getAllCourse(string query = "select * from Course")
+        {
+            adapter = new SqlDataAdapter(query, db.SqlCon);
+            builder = new SqlCommandBuilder(adapter);
+            db.OpenConnection();
+            ds = new DataSet();
+            adapter.Fill(ds, "tblCourse");
+
+            return ds;
+        }
+
+        public void editCourseWithBinding()
+        {
+            builder.GetInsertCommand();
+            int k = adapter.Update(ds.Tables["tblCourse"]);
+            if (k > 0)
+            {
+                MessageBox.Show("da luu du lieu thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("Da co loi");
+            }
+        }
+        public void deleteCourseWithBinding()
+        {
+            builder.GetDeleteCommand();
+            int k = adapter.Update(ds.Tables["tblCourse"]);
+            if (k > 0)
+            {
+                MessageBox.Show("Da xoa thanh cong du lieu");
+            }
+            else
+            {
+                MessageBox.Show("Xoa that bai");
+            }
+        }
     }
 }

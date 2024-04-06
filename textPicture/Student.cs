@@ -116,7 +116,7 @@ namespace textPicture
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.CommandType = CommandType.Text;
             sqlCmd.CommandText = "insert into StudentDetail values(@ID, @FirstName," +
-                "@LastName, @BirthDate, @Gender, @Phone, @Address, @Image)";
+                "@LastName, @BirthDate, @Gender, @Phone, @Address, @Email, @Image)";
 
             sqlCmd.Parameters.Add(new SqlParameter("@ID", SqlDbType.Char)).Value = ID;
             sqlCmd.Parameters.Add(new SqlParameter("@FirstName", SqlDbType.Char)).Value = FirstName;
@@ -125,6 +125,7 @@ namespace textPicture
             sqlCmd.Parameters.Add(new SqlParameter("@Gender", SqlDbType.Char)).Value = Gender;
             sqlCmd.Parameters.Add(new SqlParameter("@Phone", SqlDbType.Char)).Value = Phone;
             sqlCmd.Parameters.Add(new SqlParameter("@Address", SqlDbType.NVarChar)).Value = Address;
+            sqlCmd.Parameters.Add(new SqlParameter("@Email", SqlDbType.NVarChar)).Value = ID + "@hcmute.edu.vn";
             sqlCmd.Parameters.Add(new SqlParameter("@Image", SqlDbType.Image)).Value = pic.ToArray();
 
             MyDB sqlCon = new MyDB();
@@ -141,6 +142,7 @@ namespace textPicture
             }
             sqlCon.CloseConnection();
         }
+
         #endregion WorkWithData
     }
 }

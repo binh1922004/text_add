@@ -39,6 +39,8 @@
             this.txt_Period = new System.Windows.Forms.TextBox();
             this.txt_Des = new System.Windows.Forms.TextBox();
             this.btn_Add = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbb_Semester = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,28 +107,28 @@
             // 
             // txt_ID
             // 
-            this.txt_ID.Location = new System.Drawing.Point(340, 101);
+            this.txt_ID.Location = new System.Drawing.Point(268, 101);
             this.txt_ID.Name = "txt_ID";
             this.txt_ID.Size = new System.Drawing.Size(100, 27);
             this.txt_ID.TabIndex = 4;
             // 
             // txt_CName
             // 
-            this.txt_CName.Location = new System.Drawing.Point(340, 174);
+            this.txt_CName.Location = new System.Drawing.Point(268, 174);
             this.txt_CName.Name = "txt_CName";
             this.txt_CName.Size = new System.Drawing.Size(240, 27);
             this.txt_CName.TabIndex = 5;
             // 
             // txt_Period
             // 
-            this.txt_Period.Location = new System.Drawing.Point(340, 247);
+            this.txt_Period.Location = new System.Drawing.Point(268, 247);
             this.txt_Period.Name = "txt_Period";
             this.txt_Period.Size = new System.Drawing.Size(240, 27);
             this.txt_Period.TabIndex = 6;
             // 
             // txt_Des
             // 
-            this.txt_Des.Location = new System.Drawing.Point(340, 320);
+            this.txt_Des.Location = new System.Drawing.Point(268, 320);
             this.txt_Des.Multiline = true;
             this.txt_Des.Name = "txt_Des";
             this.txt_Des.Size = new System.Drawing.Size(240, 79);
@@ -142,12 +144,32 @@
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(472, 108);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Semester";
+            // 
+            // cbb_Semester
+            // 
+            this.cbb_Semester.FormattingEnabled = true;
+            this.cbb_Semester.Location = new System.Drawing.Point(571, 100);
+            this.cbb_Semester.Name = "cbb_Semester";
+            this.cbb_Semester.Size = new System.Drawing.Size(47, 28);
+            this.cbb_Semester.TabIndex = 10;
+            // 
             // AddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(751, 467);
+            this.Controls.Add(this.cbb_Semester);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.txt_Des);
             this.Controls.Add(this.txt_Period);
@@ -183,5 +205,7 @@
         private System.Windows.Forms.TextBox txt_Period;
         private System.Windows.Forms.TextBox txt_Des;
         private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbb_Semester;
     }
 }

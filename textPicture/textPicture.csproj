@@ -84,6 +84,18 @@
     <Compile Include="AddCourse.Designer.cs">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCourseFromStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCourseFromStudentForm.Designer.cs">
+      <DependentUpon>AddCourseFromStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddScoreForm.Designer.cs">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,12 @@
     </Compile>
     <Compile Include="AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AvgScoreByCouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AvgScoreByCouse.Designer.cs">
+      <DependentUpon>AvgScoreByCouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="DeleteCourseForm.cs">
@@ -127,6 +145,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageCourseForm.Designer.cs">
+      <DependentUpon>ManageCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageScoreForm.Designer.cs">
+      <DependentUpon>ManageScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +164,12 @@
       <DependentUpon>ManageStudentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDB.cs" />
+    <Compile Include="PrintCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintCourseForm.Designer.cs">
+      <DependentUpon>PrintCourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrinterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +184,7 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Score.cs" />
     <Compile Include="SendMail.cs" />
     <Compile Include="StaticForm.cs">
       <SubType>Form</SubType>
@@ -183,14 +220,43 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UniversityManageDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UniversityManageDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityManageDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityManageDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityManageDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityManageDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityManageDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityManageDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityManageDataSet5.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCourseFromStudentForm.resx">
+      <DependentUpon>AddCourseFromStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddScoreForm.resx">
+      <DependentUpon>AddScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AvgScoreByCouse.resx">
+      <DependentUpon>AvgScoreByCouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteCourseForm.resx">
       <DependentUpon>DeleteCourseForm.cs</DependentUpon>
@@ -207,8 +273,17 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageCourseForm.resx">
+      <DependentUpon>ManageCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageScoreForm.resx">
+      <DependentUpon>ManageScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageStudentForm.resx">
       <DependentUpon>ManageStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintCourseForm.resx">
+      <DependentUpon>PrintCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrinterForm.resx">
       <DependentUpon>PrinterForm.cs</DependentUpon>
@@ -277,6 +352,50 @@
     </None>
     <None Include="UniversityManageDataSet1.xss">
       <DependentUpon>UniversityManageDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet2.xsc">
+      <DependentUpon>UniversityManageDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityManageDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityManageDataSet2.xss">
+      <DependentUpon>UniversityManageDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet3.xsc">
+      <DependentUpon>UniversityManageDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityManageDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityManageDataSet3.xss">
+      <DependentUpon>UniversityManageDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet4.xsc">
+      <DependentUpon>UniversityManageDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityManageDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityManageDataSet4.xss">
+      <DependentUpon>UniversityManageDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet5.xsc">
+      <DependentUpon>UniversityManageDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityManageDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityManageDataSet5.xss">
+      <DependentUpon>UniversityManageDataSet5.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

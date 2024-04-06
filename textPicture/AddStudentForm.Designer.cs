@@ -258,7 +258,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(225, 9);
+            this.label9.Location = new System.Drawing.Point(245, 9);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(117, 25);
             this.label9.TabIndex = 0;
