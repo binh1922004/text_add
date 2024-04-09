@@ -115,6 +115,7 @@
       <DependentUpon>AvgScoreByCouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="CourseRegister.cs" />
     <Compile Include="DeleteCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>

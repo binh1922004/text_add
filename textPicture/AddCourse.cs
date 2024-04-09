@@ -29,6 +29,7 @@ namespace textPicture
             string cname = txt_CName.Text;
             string des = txt_Des.Text;
             int period;
+            string semester = cbb_Semester.SelectedIndex.ToString();
             if (Int32.TryParse(txt_Period.Text, out period))
             {
                 if (period < 10)
@@ -43,7 +44,7 @@ namespace textPicture
                 return;
             }
 
-            if (course.insertCourse(id, cname, period, des)){
+            if (course.insertCourse(id, cname, period, des, semester)){
                 MessageBox.Show("Successfully added");
             }
             else

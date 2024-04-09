@@ -140,5 +140,13 @@ namespace textPicture
             manageScoreForm.ShowDialog();
                 this.Show();
         }
+
+        private void selectCourseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCourseFromStudentForm addCourseFromStudentForm = new AddCourseFromStudentForm();
+            this.Hide();
+            addCourseFromStudentForm.ShowDialog();
+            this.Show();
+        }
     }
 }

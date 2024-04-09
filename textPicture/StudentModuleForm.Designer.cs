@@ -49,6 +49,7 @@
             this.btn_FindID = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_AddCourse = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pic_Face)).BeginInit();
             this.SuspendLayout();
             // 
@@ -223,7 +224,7 @@
             // btn_Remove
             // 
             this.btn_Remove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_Remove.Location = new System.Drawing.Point(210, 444);
+            this.btn_Remove.Location = new System.Drawing.Point(122, 446);
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(116, 30);
             this.btn_Remove.TabIndex = 19;
@@ -234,7 +235,7 @@
             // btn_Edit
             // 
             this.btn_Edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_Edit.Location = new System.Drawing.Point(393, 444);
+            this.btn_Edit.Location = new System.Drawing.Point(305, 446);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(116, 30);
             this.btn_Edit.TabIndex = 20;
@@ -242,12 +243,24 @@
             this.btn_Edit.UseVisualStyleBackColor = false;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
+            // btn_AddCourse
+            // 
+            this.btn_AddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_AddCourse.Location = new System.Drawing.Point(494, 446);
+            this.btn_AddCourse.Name = "btn_AddCourse";
+            this.btn_AddCourse.Size = new System.Drawing.Size(116, 30);
+            this.btn_AddCourse.TabIndex = 21;
+            this.btn_AddCourse.Text = "Add course";
+            this.btn_AddCourse.UseVisualStyleBackColor = false;
+            this.btn_AddCourse.Click += new System.EventHandler(this.btn_AddCourse_Click);
+            // 
             // StudentModuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(709, 508);
+            this.Controls.Add(this.btn_AddCourse);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.btn_FindID);
@@ -302,5 +315,6 @@
         private System.Windows.Forms.Button btn_FindID;
         private System.Windows.Forms.Button btn_Remove;
         private System.Windows.Forms.Button btn_Edit;
+        private System.Windows.Forms.Button btn_AddCourse;
     }
 }

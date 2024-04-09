@@ -39,6 +39,8 @@
             this.lsb_Available = new System.Windows.Forms.ListBox();
             this.lsb_Selected = new System.Windows.Forms.ListBox();
             this.btn_Add = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Find = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,11 +145,33 @@
             this.btn_Add.UseVisualStyleBackColor = true;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
+            // btn_Save
+            // 
+            this.btn_Save.Location = new System.Drawing.Point(255, 459);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(81, 34);
+            this.btn_Save.TabIndex = 33;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_Find
+            // 
+            this.btn_Find.Location = new System.Drawing.Point(229, 71);
+            this.btn_Find.Name = "btn_Find";
+            this.btn_Find.Size = new System.Drawing.Size(91, 30);
+            this.btn_Find.TabIndex = 34;
+            this.btn_Find.Text = "Find";
+            this.btn_Find.UseVisualStyleBackColor = true;
+            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
+            // 
             // AddCourseFromStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(586, 525);
+            this.Controls.Add(this.btn_Find);
+            this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.lsb_Selected);
             this.Controls.Add(this.lsb_Available);
@@ -159,7 +183,7 @@
             this.Controls.Add(this.txt_ID);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddCourseFromStudentForm";
             this.Text = "AddCourseFromStudentForm";
             this.panel1.ResumeLayout(false);
@@ -182,5 +206,7 @@
         private System.Windows.Forms.ListBox lsb_Available;
         private System.Windows.Forms.ListBox lsb_Selected;
         private System.Windows.Forms.Button btn_Add;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Find;
     }
 }

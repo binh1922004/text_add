@@ -17,8 +17,8 @@ namespace textPicture
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Mane("user"));
-            Application.Run(new ImportStudentForm());
-            //Application.Run(new MainForm("user"));
+            //Application.Run(new StudentListForm());
+            Application.Run(new MainForm("user"));
         }
     }
 }

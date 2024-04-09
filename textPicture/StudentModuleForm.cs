@@ -58,7 +58,7 @@ namespace textPicture
                 else rbtn_Female.Checked = true;
                 txt_Phone.Text = reader.GetString(5);
                 txt_Address.Text = reader.GetString(6);
-                byte[] pic = (byte[])reader.GetValue(7);
+                byte[] pic = (byte[])reader.GetValue(8);
                 MemoryStream picture = new MemoryStream(pic);
                 pic_Face.Image = Image.FromStream(picture);
             }
@@ -137,6 +137,15 @@ namespace textPicture
                 }
             }
 
+        }
+
+        private void btn_AddCourse_Click(object sender, EventArgs e)
+        {
+            string id = txt_ID.Text;
+            AddCourseFromStudentForm courseRegister = new AddCourseFromStudentForm(id);
+            this.Hide();
+            courseRegister.ShowDialog();
+            this.Show();
         }
     }
 }

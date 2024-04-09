@@ -13,7 +13,7 @@ namespace textPicture
 {
     internal class Student
     {
-
+        MyDB db = new MyDB();
         #region CheckValue
         private static bool verif(string iD, string firstName, string lastName, string birthDate, string phone, string address)
         {
@@ -142,7 +142,15 @@ namespace textPicture
             }
             sqlCon.CloseConnection();
         }
-
+        public bool searchStudent(string id)
+        {
+            string query = "select * from StudentDetail where StudentID = '" + id + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
+            db.OpenConnection();
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt.Rows.Count > 0;   
+        }
         #endregion WorkWithData
     }
 }

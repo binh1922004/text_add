@@ -43,7 +43,7 @@ namespace textPicture
             return true;
         }
         #endregion checkdata
-        public bool insertCourse(string id, string courseName, int period, string des)
+        public bool insertCourse(string id, string courseName, int period, string des, string semester)
         {
             if (!checkCourseName(id, courseName))
             {
@@ -55,12 +55,13 @@ namespace textPicture
                 MessageBox.Show("Invalid value input");
                 return false;
             }
-            string query = "insert into Course values(@cid, @cname, @cperiod, @cdes)";
+            string query = "insert into Course values(@cid, @cname, @cperiod, @cdes, @semester)";
             SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
             sqlCmd.Parameters.Add(new SqlParameter("@cid", System.Data.SqlDbType.Char)).Value = id;
             sqlCmd.Parameters.Add(new SqlParameter("@cname", System.Data.SqlDbType.NVarChar)).Value = courseName;
             sqlCmd.Parameters.Add(new SqlParameter("@cperiod", System.Data.SqlDbType.Int)).Value = period;
             sqlCmd.Parameters.Add(new SqlParameter("@cdes", System.Data.SqlDbType.Text)).Value = des;
+            sqlCmd.Parameters.Add(new SqlParameter("@semester", System.Data.SqlDbType.Int)).Value = semester;
 
             db.OpenConnection();
             int k = sqlCmd.ExecuteNonQuery();
