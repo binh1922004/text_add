@@ -28,15 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgv_StudentList = new System.Windows.Forms.DataGridView();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -54,106 +45,23 @@
             this.rbtn_Male = new System.Windows.Forms.RadioButton();
             this.rbtn_Female = new System.Windows.Forms.RadioButton();
             this.rbtn_All = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).BeginInit();
+            this.dgv_StudentList = new System.Windows.Forms.DataGridView();
+            this.sid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.face = new System.Windows.Forms.DataGridViewImageColumn();
+            this.select = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgv_StudentList
-            // 
-            this.dgv_StudentList.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_StudentList.ColumnHeadersHeight = 30;
-            this.dgv_StudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StudentID,
-            this.Column1,
-            this.Column2,
-            this.BirthDate,
-            this.Sex,
-            this.Phone,
-            this.Column3,
-            this.Column4});
-            this.dgv_StudentList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_StudentList.Location = new System.Drawing.Point(0, 82);
-            this.dgv_StudentList.Name = "dgv_StudentList";
-            this.dgv_StudentList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
-            this.dgv_StudentList.RowHeadersWidth = 70;
-            this.dgv_StudentList.RowTemplate.Height = 50;
-            this.dgv_StudentList.Size = new System.Drawing.Size(1000, 430);
-            this.dgv_StudentList.TabIndex = 6;
-            // 
-            // StudentID
-            // 
-            this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.HeaderText = "Student ID";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Width = 117;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.DataPropertyName = "FirstName";
-            this.Column1.HeaderText = "First Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 121;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.DataPropertyName = "LastName";
-            this.Column2.HeaderText = "Last name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 117;
-            // 
-            // BirthDate
-            // 
-            this.BirthDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BirthDate.DataPropertyName = "BirthDate";
-            this.BirthDate.HeaderText = "Birth Date";
-            this.BirthDate.MinimumWidth = 6;
-            this.BirthDate.Name = "BirthDate";
-            this.BirthDate.Width = 115;
-            // 
-            // Sex
-            // 
-            this.Sex.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Sex.DataPropertyName = "Sex";
-            this.Sex.HeaderText = "Gender";
-            this.Sex.MinimumWidth = 6;
-            this.Sex.Name = "Sex";
-            this.Sex.Width = 93;
-            // 
-            // Phone
-            // 
-            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Phone.DataPropertyName = "Phone";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.MinimumWidth = 6;
-            this.Phone.Name = "Phone";
-            this.Phone.Width = 85;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "Address";
-            this.Column3.HeaderText = "Address";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.DataPropertyName = "Face";
-            this.Column4.HeaderText = "Face";
-            this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 52;
             // 
             // panel2
             // 
@@ -188,6 +96,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Save to file";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_Check
             // 
@@ -258,7 +167,7 @@
             // 
             // dtp_Min
             // 
-            this.dtp_Min.CustomFormat = "mm/dd/yyyy";
+            this.dtp_Min.CustomFormat = "dd/MM/yyyy";
             this.dtp_Min.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtp_Min.Location = new System.Drawing.Point(89, 40);
             this.dtp_Min.Name = "dtp_Min";
@@ -347,6 +256,123 @@
             this.rbtn_All.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rbtn_All.UseVisualStyleBackColor = true;
             // 
+            // dgv_StudentList
+            // 
+            this.dgv_StudentList.AllowUserToAddRows = false;
+            this.dgv_StudentList.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_StudentList.ColumnHeadersHeight = 50;
+            this.dgv_StudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.sid,
+            this.fn,
+            this.ln,
+            this.dob,
+            this.gender,
+            this.Phone,
+            this.add,
+            this.email,
+            this.face,
+            this.select});
+            this.dgv_StudentList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_StudentList.Location = new System.Drawing.Point(0, 82);
+            this.dgv_StudentList.MultiSelect = false;
+            this.dgv_StudentList.Name = "dgv_StudentList";
+            this.dgv_StudentList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgv_StudentList.RowHeadersWidth = 20;
+            this.dgv_StudentList.RowTemplate.Height = 50;
+            this.dgv_StudentList.Size = new System.Drawing.Size(1000, 430);
+            this.dgv_StudentList.TabIndex = 44;
+            this.dgv_StudentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_StudentList_CellClick);
+            // 
+            // sid
+            // 
+            this.sid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sid.DataPropertyName = "StudentID";
+            this.sid.HeaderText = "Student ID";
+            this.sid.MinimumWidth = 6;
+            this.sid.Name = "sid";
+            this.sid.Width = 108;
+            // 
+            // fn
+            // 
+            this.fn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fn.DataPropertyName = "FirstName";
+            this.fn.HeaderText = "Fname";
+            this.fn.MinimumWidth = 6;
+            this.fn.Name = "fn";
+            this.fn.Width = 89;
+            // 
+            // ln
+            // 
+            this.ln.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ln.DataPropertyName = "LastName";
+            this.ln.HeaderText = "Lname";
+            this.ln.MinimumWidth = 6;
+            this.ln.Name = "ln";
+            this.ln.Width = 89;
+            // 
+            // dob
+            // 
+            this.dob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dob.DataPropertyName = "BirthDate";
+            this.dob.HeaderText = "DOB";
+            this.dob.MinimumWidth = 6;
+            this.dob.Name = "dob";
+            this.dob.Width = 76;
+            // 
+            // gender
+            // 
+            this.gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gender.DataPropertyName = "Sex";
+            this.gender.HeaderText = "Gender";
+            this.gender.MinimumWidth = 6;
+            this.gender.Name = "gender";
+            this.gender.Width = 93;
+            // 
+            // Phone
+            // 
+            this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Phone";
+            this.Phone.MinimumWidth = 6;
+            this.Phone.Name = "Phone";
+            this.Phone.Width = 85;
+            // 
+            // add
+            // 
+            this.add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.add.DataPropertyName = "Address";
+            this.add.HeaderText = "Address";
+            this.add.MinimumWidth = 6;
+            this.add.Name = "add";
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 80;
+            // 
+            // face
+            // 
+            this.face.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.face.DataPropertyName = "Face";
+            this.face.HeaderText = "Face";
+            this.face.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.face.MinimumWidth = 6;
+            this.face.Name = "face";
+            this.face.Width = 52;
+            // 
+            // select
+            // 
+            this.select.HeaderText = "Select course";
+            this.select.Image = global::textPicture.Properties.Resources._checked;
+            this.select.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.select.MinimumWidth = 30;
+            this.select.Name = "select";
+            this.select.Width = 30;
+            // 
             // PrinterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -359,28 +385,18 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PrinterForm";
             this.Text = "PrinterForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgv_StudentList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BirthDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Check;
         private System.Windows.Forms.Panel panel1;
@@ -398,5 +414,16 @@
         private System.Windows.Forms.DateTimePicker dtp_Max;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgv_StudentList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ln;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewImageColumn face;
+        private System.Windows.Forms.DataGridViewImageColumn select;
     }
 }

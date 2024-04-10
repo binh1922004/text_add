@@ -15,24 +15,33 @@ namespace textPicture
     {
         MyDB db = new MyDB();
         #region CheckValue
-        private static bool verif(string iD, string firstName, string lastName, string birthDate, string phone, string address)
+        public static bool verif(string iD, string firstName, string lastName, string birthDate, string phone, string address, int rows = -1)
         {
             if (iD.Trim() == "" || firstName.Trim() == "" || lastName.Trim() == "" 
                 || address.Trim() == "")
             {
-                MessageBox.Show("Please enter vaild value");
+                string mes = "Please enter vaild value";
+                if (rows >= 0)
+                    mes += " in row " + rows.ToString();
+                MessageBox.Show(mes);
                 return false;
             }
             else
             {
                 if (containInt(firstName) || containInt(lastName))
                 {
-                    MessageBox.Show("Dont enter number in name");
+                    string mes = "Dont enter number in name";
+                    if (rows >= 0)
+                        mes += " in row " + rows.ToString();
+                    MessageBox.Show(mes);
                     return false;
                 }
                 else if (containChar(phone) == false)
                 {
-                    MessageBox.Show("Dont enter char in phone number");
+                    string mes = "Dont enter char in phone number";
+                    if (rows >= 0)
+                        mes += " in row " + rows.ToString();
+                    MessageBox.Show(mes);
                     return false;
                 }
             }
@@ -50,6 +59,15 @@ namespace textPicture
         }
         #endregion CheckValue
         #region WorkWithData
+        public bool searchStudent(string id)
+        {
+            string query = "select * from StudentDetail where StudentID = '" + id + "'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
+            db.OpenConnection();
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt.Rows.Count > 0;   
+        }
         public static bool deleteStudent(string id)
         {
             MyDB sqlCon = new MyDB();
@@ -105,13 +123,12 @@ namespace textPicture
             }
         }
         public static void InsertStudent(string ID, string FirstName, string LastName, string BirthDate, string Gender, string Phone,
-            string Address, MemoryStream pic)
+            string Address, MemoryStream pic, string from = "add")
         {
             if (!verif(ID, FirstName, LastName, BirthDate, Phone, Address))
             {
                 return;
             }
-
 
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.CommandType = CommandType.Text;
@@ -134,7 +151,9 @@ namespace textPicture
             int k = sqlCmd.ExecuteNonQuery();
             if (k > 0)
             {
-                MessageBox.Show("Successfully Added");
+                if (from == "add")
+                    MessageBox.Show("Successfully Added");
+            
             }
             else
             {
@@ -142,14 +161,14 @@ namespace textPicture
             }
             sqlCon.CloseConnection();
         }
-        public bool searchStudent(string id)
+        public DataTable getAllStudent(string query)
         {
-            string query = "select * from StudentDetail where StudentID = '" + id + "'";
+            DataTable dt = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
             db.OpenConnection();
-            DataTable dt = new DataTable();
             adapter.Fill(dt);
-            return dt.Rows.Count > 0;   
+            db.CloseConnection();
+            return dt;
         }
         #endregion WorkWithData
     }

@@ -66,5 +66,13 @@ namespace textPicture
         {
             Close();
         }
+
+        private void btn_Import_Click(object sender, EventArgs e)
+        {
+            ImportStudentForm importStudentForm = new ImportStudentForm();
+            this.Hide();
+            importStudentForm.ShowDialog();
+            this.Show();
+        }
     }
 }

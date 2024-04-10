@@ -25,38 +25,28 @@ namespace textPicture
             //numeric 
             neud_pe.Minimum = 10;
 
-            string query = "select id from Course";
-            SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
-            db.OpenConnection();
-            
-            SqlDataReader reader = sqlCmd.ExecuteReader();
-            while (reader.Read())
-            {
-                int id = reader.GetInt32(0);
-                cbb_ID.Items.Add(id.ToString());
-            }
-            reader.Close();
-            db.CloseConnection();
+            DataTable dt = new DataTable();
+            dt = course.getAllCourse().Tables["tblCourse"];
+            cbb_ID.DataSource = dt;
+            //cbb_ID.SelectedItem = null;
+            cbb_ID.DisplayMember = "label";
+            cbb_ID.ValueMember = "id";
         }
 
         private void cbb_ID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbb_ID.SelectedIndex < 0)
+            if (cbb_ID.SelectedIndex < 0 || cbb_ID.SelectedValue.ToString().Any(char.IsLetter))
                 return;
-            string id = cbb_ID.SelectedItem.ToString();
-            string query = "select label, period, description from Course where id = '" + id + "'";
-            SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
-            db.OpenConnection();
-            SqlDataReader reader = sqlCmd.ExecuteReader();
-            if (reader.Read())
-            {
-                txt_CName.Text = reader.GetString(0);
-                int pe = reader.GetInt32(1);
-                neud_pe.Value = pe;
-                txt_Des.Text = reader.GetString(2);
-            }
-            reader.Close();
-            db.CloseConnection();
+            string id = cbb_ID.SelectedValue.ToString();
+            string query = "select * from Course where id = " + id;
+            DataTable dt = new DataTable();
+            dt = course.getAllCourse(query).Tables["tblCourse"];
+
+            txt_CName.Text = dt.Rows[0]["label"].ToString();
+            txt_Des.Text = dt.Rows[0]["description"].ToString();
+            txt_Semester.Text = dt.Rows[0]["semester"].ToString();
+
+
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)

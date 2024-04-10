@@ -147,5 +147,15 @@ namespace textPicture
             courseRegister.ShowDialog();
             this.Show();
         }
+
+        private void btn_Image_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Select image (*.jpg;*.png;*.gif)|*.jpg;*.png;*gif";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                pic_Face.Image = Image.FromFile(ofd.FileName);
+            }
+        }
     }
 }

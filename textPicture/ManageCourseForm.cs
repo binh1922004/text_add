@@ -33,7 +33,7 @@ namespace textPicture
             txt_Des.DataBindings.Add("Text", bs, "description");
             txt_Label.DataBindings.Add("Text", bs, "label");
             neud_Hours.DataBindings.Add("Text", bs, "period");
-
+            txt_Semester.DataBindings.Add("Text", bs, "semester");
             lsb_Data.DataSource = bs;
         }
 
@@ -95,6 +95,20 @@ namespace textPicture
         {
             bs.RemoveCurrent();
             course.deleteCourseWithBinding();
+        }
+
+        private void lsb_Data_DoubleClick(object sender, EventArgs e)
+        {
+            if (lsb_Data.SelectedIndex >= 0)
+            {
+                string cid = txt_ID.Text;
+                string label = txt_Label.Text;
+                string semester = txt_Semester.Text;
+                CourseStudentListForm courseStudentListForm = new CourseStudentListForm(cid, label, semester);
+                this.Hide();
+                courseStudentListForm.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

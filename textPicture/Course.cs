@@ -74,7 +74,6 @@ namespace textPicture
                 return false;
             }
         }
-
         public void deleteCourse(string id)
         {
             try

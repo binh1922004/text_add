@@ -46,6 +46,8 @@
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
+            this.txt_Semester = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.neud_Hours)).BeginInit();
             this.SuspendLayout();
@@ -65,11 +67,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(310, 9);
+            this.label1.Location = new System.Drawing.Point(276, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 29);
+            this.label1.Size = new System.Drawing.Size(179, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Edit course";
+            this.label1.Text = "Manage course";
             // 
             // label2
             // 
@@ -105,7 +107,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(81, 306);
+            this.label5.Location = new System.Drawing.Point(81, 342);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 13;
@@ -144,7 +146,7 @@
             // 
             // txt_Des
             // 
-            this.txt_Des.Location = new System.Drawing.Point(207, 299);
+            this.txt_Des.Location = new System.Drawing.Point(207, 339);
             this.txt_Des.Multiline = true;
             this.txt_Des.Name = "txt_Des";
             this.txt_Des.Size = new System.Drawing.Size(201, 130);
@@ -158,13 +160,14 @@
             this.lsb_Data.Name = "lsb_Data";
             this.lsb_Data.Size = new System.Drawing.Size(257, 324);
             this.lsb_Data.TabIndex = 18;
+            this.lsb_Data.DoubleClick += new System.EventHandler(this.lsb_Data_DoubleClick);
             // 
             // btn_First
             // 
             this.btn_First.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_First.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_First.ForeColor = System.Drawing.Color.White;
-            this.btn_First.Location = new System.Drawing.Point(47, 448);
+            this.btn_First.Location = new System.Drawing.Point(45, 475);
             this.btn_First.Name = "btn_First";
             this.btn_First.Size = new System.Drawing.Size(85, 33);
             this.btn_First.TabIndex = 19;
@@ -177,7 +180,7 @@
             this.btn_Pre.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Pre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_Pre.ForeColor = System.Drawing.Color.White;
-            this.btn_Pre.Location = new System.Drawing.Point(164, 448);
+            this.btn_Pre.Location = new System.Drawing.Point(162, 475);
             this.btn_Pre.Name = "btn_Pre";
             this.btn_Pre.Size = new System.Drawing.Size(85, 33);
             this.btn_Pre.TabIndex = 20;
@@ -190,7 +193,7 @@
             this.btn_Next.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Next.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_Next.ForeColor = System.Drawing.Color.White;
-            this.btn_Next.Location = new System.Drawing.Point(281, 448);
+            this.btn_Next.Location = new System.Drawing.Point(279, 475);
             this.btn_Next.Name = "btn_Next";
             this.btn_Next.Size = new System.Drawing.Size(85, 33);
             this.btn_Next.TabIndex = 21;
@@ -203,7 +206,7 @@
             this.btn_Last.BackColor = System.Drawing.Color.RoyalBlue;
             this.btn_Last.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_Last.ForeColor = System.Drawing.Color.White;
-            this.btn_Last.Location = new System.Drawing.Point(398, 448);
+            this.btn_Last.Location = new System.Drawing.Point(396, 475);
             this.btn_Last.Name = "btn_Last";
             this.btn_Last.Size = new System.Drawing.Size(85, 33);
             this.btn_Last.TabIndex = 22;
@@ -215,7 +218,7 @@
             // 
             this.btn_Add.BackColor = System.Drawing.Color.Green;
             this.btn_Add.ForeColor = System.Drawing.Color.White;
-            this.btn_Add.Location = new System.Drawing.Point(130, 499);
+            this.btn_Add.Location = new System.Drawing.Point(128, 526);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(85, 30);
             this.btn_Add.TabIndex = 23;
@@ -227,7 +230,7 @@
             // 
             this.btn_Edit.BackColor = System.Drawing.Color.Green;
             this.btn_Edit.ForeColor = System.Drawing.Color.White;
-            this.btn_Edit.Location = new System.Drawing.Point(264, 499);
+            this.btn_Edit.Location = new System.Drawing.Point(262, 526);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(85, 30);
             this.btn_Edit.TabIndex = 24;
@@ -239,7 +242,7 @@
             // 
             this.btn_Remove.BackColor = System.Drawing.Color.Green;
             this.btn_Remove.ForeColor = System.Drawing.Color.White;
-            this.btn_Remove.Location = new System.Drawing.Point(398, 499);
+            this.btn_Remove.Location = new System.Drawing.Point(396, 526);
             this.btn_Remove.Name = "btn_Remove";
             this.btn_Remove.Size = new System.Drawing.Size(85, 30);
             this.btn_Remove.TabIndex = 25;
@@ -247,12 +250,31 @@
             this.btn_Remove.UseVisualStyleBackColor = false;
             this.btn_Remove.Click += new System.EventHandler(this.btn_Remove_Click);
             // 
+            // txt_Semester
+            // 
+            this.txt_Semester.Location = new System.Drawing.Point(207, 277);
+            this.txt_Semester.Name = "txt_Semester";
+            this.txt_Semester.Size = new System.Drawing.Size(62, 27);
+            this.txt_Semester.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(95, 284);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(86, 20);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Semester:";
+            // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(736, 569);
+            this.Controls.Add(this.txt_Semester);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Add);
@@ -271,7 +293,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageCourseForm";
             this.Text = "ManageCourseForm";
             this.Load += new System.EventHandler(this.ManageCourseForm_Load);
@@ -303,5 +325,7 @@
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Button btn_Remove;
+        private System.Windows.Forms.TextBox txt_Semester;
+        private System.Windows.Forms.Label label6;
     }
 }

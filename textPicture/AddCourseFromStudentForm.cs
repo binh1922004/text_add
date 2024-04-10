@@ -31,6 +31,7 @@ namespace textPicture
             InitializeComponent();
             this.stid = stID;
             txt_ID.Text = stID;
+            txt_ID.ReadOnly = true;
             LoadData();
         }
 
@@ -45,13 +46,14 @@ namespace textPicture
                 deleted.Add(new List<int>());
 
             cbb_Semester.DataSource = semester;
-            cbb_Semester.SelectedItem = null ;
         }
 
         private void cbb_Semester_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbb_Semester.SelectedItem == null)
+            {
                 return;
+            }
             ky = Int32.Parse(cbb_Semester.SelectedItem.ToString());
             if (ky <= 0)
                 return;

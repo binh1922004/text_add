@@ -38,19 +38,31 @@ namespace textPicture
             if (rbtn_Female.Checked)
             {
                 query += "where Sex = 'Female' ";
-                //if (rbtn_RangeYes.Checked)
-                //{
-
-                //}
+                if (rbtn_RangeYes.Checked)
+                {
+                    string left = dtp_Min.Value.ToString("yyyy/MM/dd");
+                    string right = dtp_Max.Value.ToString("yyyy/MM/dd");
+                    query += "and BirthDate between '" + left +"' and '" + right + "'";
+                }
             }
             else if (rbtn_Male.Checked)
             {
-                MessageBox.Show("hi");
                 query += "where Sex = 'Male' ";
-                //if (rbtn_RangeYes.Checked)
-                //{
-
-                //}
+                if (rbtn_RangeYes.Checked)
+                {
+                    string left = dtp_Min.Value.ToString("yyyy/MM/dd");
+                    string right = dtp_Max.Value.ToString("yyyy/MM/dd");
+                    query += "and BirthDate between '" + left + "' and '" + right + "'";
+                }
+            }
+            else
+            {
+                if (rbtn_RangeYes.Checked)
+                {
+                    string left = dtp_Min.Value.ToString("yyyy/MM/dd");
+                    string right = dtp_Max.Value.ToString("yyyy/MM/dd");
+                    query += "where BirthDate between '" + left + "' and '" + right + "'";
+                }
             }
 
 
@@ -63,6 +75,24 @@ namespace textPicture
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dgv_StudentList.DataSource = dt;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_StudentList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow dtr = dgv_StudentList.Rows[e.RowIndex];
+            if (e.ColumnIndex == 0)
+            {
+                string id = dtr.Cells["sid"].Value.ToString();
+                AddCourseFromStudentForm addCourseFromStudentForm = new AddCourseFromStudentForm(id);
+                this.Hide();
+                addCourseFromStudentForm.ShowDialog();
+                this.Show();
+            }
         }
     }
 }

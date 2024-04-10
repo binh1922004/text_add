@@ -39,6 +39,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cbb_ID = new System.Windows.Forms.ComboBox();
             this.neud_pe = new System.Windows.Forms.NumericUpDown();
+            this.txt_Semester = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.neud_pe)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +95,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(122, 244);
+            this.label5.Location = new System.Drawing.Point(122, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 20);
             this.label5.TabIndex = 12;
@@ -140,10 +142,27 @@
             // 
             // neud_pe
             // 
-            this.neud_pe.Location = new System.Drawing.Point(340, 241);
+            this.neud_pe.Location = new System.Drawing.Point(340, 210);
             this.neud_pe.Name = "neud_pe";
             this.neud_pe.Size = new System.Drawing.Size(120, 27);
             this.neud_pe.TabIndex = 20;
+            // 
+            // txt_Semester
+            // 
+            this.txt_Semester.Location = new System.Drawing.Point(340, 260);
+            this.txt_Semester.Name = "txt_Semester";
+            this.txt_Semester.Size = new System.Drawing.Size(62, 27);
+            this.txt_Semester.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(122, 267);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Semester";
             // 
             // EditCourseForm
             // 
@@ -151,6 +170,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Navy;
             this.ClientSize = new System.Drawing.Size(742, 452);
+            this.Controls.Add(this.txt_Semester);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.neud_pe);
             this.Controls.Add(this.cbb_ID);
             this.Controls.Add(this.panel1);
@@ -188,5 +209,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbb_ID;
         private System.Windows.Forms.NumericUpDown neud_pe;
+        private System.Windows.Forms.TextBox txt_Semester;
+        private System.Windows.Forms.Label label6;
     }
 }

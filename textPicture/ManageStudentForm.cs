@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Math.Field;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,27 +38,36 @@ namespace textPicture
             if (e.RowIndex != -1 )
             {
                 DataGridViewRow dtr = dgv_StudentList.Rows[e.RowIndex];
-                txtID.Text = dtr.Cells[0].Value.ToString();
-                txtFirstName.Text = dtr.Cells[1].Value.ToString();
-                txtLastName.Text = dtr.Cells[2].Value.ToString();
-                dtpBirth.Value = (DateTime) dtr.Cells[3].Value;
-                txtPhone.Text = dtr.Cells[5].Value.ToString();
-                txtAddress.Text = dtr.Cells[6].Value.ToString();
+                if (e.ColumnIndex == 0)
+                {
+                    string id = dtr.Cells["sid"].Value.ToString();
+                    CourseList courseList = new CourseList(id);
+                    this.Hide();
+                    courseList.ShowDialog();
+                    this.Show();
+                    return;
+                }
+                txtID.Text = dtr.Cells["sid"].Value.ToString();
+                txtFirstName.Text = dtr.Cells["fn"].Value.ToString();
+                txtLastName.Text = dtr.Cells["ln"].Value.ToString();
+                dtpBirth.Value = (DateTime)dtr.Cells["dob"].Value;
+                txtPhone.Text = dtr.Cells["Phone"].Value.ToString();
+                txtAddress.Text = dtr.Cells["add"].Value.ToString();
 
-                string gender = dtr.Cells[4].Value.ToString().Trim();
+                string gender = dtr.Cells["gender"].Value.ToString().Trim();
                 if (gender == "Male")
                 {
                     rbtnMale.Checked = true;
                 }
                 else
                     rbtnFemale.Checked = true;
-                var data = (Byte[])(dtr.Cells[7].Value);
+                var data = (Byte[])(dtr.Cells["face"].Value);
                 var stream = new MemoryStream(data);
                 picFace.Image = Image.FromStream(stream);
+
             }
             else
             {
-                MessageBox.Show("hi");
             }
         }
 

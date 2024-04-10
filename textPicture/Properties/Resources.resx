@@ -124,4 +124,7 @@
   <data name="SỰ KIỆN NÀO SẼ DIỄN RA VÀO NGÀY 15_01_2024" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SỰ KIỆN NÀO SẼ DIỄN RA VÀO NGÀY 15_01_2024.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="checked" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

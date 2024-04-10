@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.picFace = new System.Windows.Forms.PictureBox();
             this.btnUpLoadImage = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.rbtnFemale = new System.Windows.Forms.RadioButton();
             this.rbtnMale = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btn_Search = new System.Windows.Forms.Button();
+            this.txt_Search = new System.Windows.Forms.TextBox();
             this.pnlSex = new System.Windows.Forms.Panel();
             this.dtpBirth = new System.Windows.Forms.DateTimePicker();
             this.txtAddress = new System.Windows.Forms.TextBox();
@@ -51,38 +54,28 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_StudentList = new System.Windows.Forms.DataGridView();
-            this.StudentID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ln = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.add = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.face = new System.Windows.Forms.DataGridViewImageColumn();
+            this.select = new System.Windows.Forms.DataGridViewImageColumn();
             this.btn_Remove = new System.Windows.Forms.Button();
             this.btn_Edit = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.btn_Search = new System.Windows.Forms.Button();
-            this.txt_Search = new System.Windows.Forms.TextBox();
             this.btn_Reset = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.picFace)).BeginInit();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.picFace = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.pnlSex.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).BeginInit();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFace)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picFace
-            // 
-            this.picFace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.picFace.Location = new System.Drawing.Point(16, 429);
-            this.picFace.Name = "picFace";
-            this.picFace.Size = new System.Drawing.Size(167, 133);
-            this.picFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picFace.TabIndex = 41;
-            this.picFace.TabStop = false;
             // 
             // btnUpLoadImage
             // 
@@ -143,8 +136,47 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1249, 50);
+            this.panel1.Size = new System.Drawing.Size(1462, 50);
             this.panel1.TabIndex = 42;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(180)))));
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.btn_Search);
+            this.panel2.Controls.Add(this.txt_Search);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1462, 50);
+            this.panel2.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(451, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(98, 20);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Search box:";
+            // 
+            // btn_Search
+            // 
+            this.btn_Search.Location = new System.Drawing.Point(818, 3);
+            this.btn_Search.Name = "btn_Search";
+            this.btn_Search.Size = new System.Drawing.Size(81, 36);
+            this.btn_Search.TabIndex = 1;
+            this.btn_Search.Text = "search";
+            this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
+            // 
+            // txt_Search
+            // 
+            this.txt_Search.Location = new System.Drawing.Point(555, 12);
+            this.txt_Search.Name = "txt_Search";
+            this.txt_Search.Size = new System.Drawing.Size(257, 27);
+            this.txt_Search.TabIndex = 0;
             // 
             // pnlSex
             // 
@@ -276,68 +308,72 @@
             // 
             this.dgv_StudentList.AllowUserToAddRows = false;
             this.dgv_StudentList.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_StudentList.ColumnHeadersHeight = 30;
+            this.dgv_StudentList.ColumnHeadersHeight = 50;
             this.dgv_StudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StudentID,
-            this.Column1,
-            this.Column2,
-            this.BirthDate,
-            this.Sex,
+            this.sid,
+            this.fn,
+            this.ln,
+            this.dob,
+            this.gender,
             this.Phone,
-            this.Column3,
-            this.Column4});
-            this.dgv_StudentList.Location = new System.Drawing.Point(450, 56);
+            this.add,
+            this.email,
+            this.face,
+            this.select});
+            this.dgv_StudentList.Location = new System.Drawing.Point(438, 62);
             this.dgv_StudentList.MultiSelect = false;
             this.dgv_StudentList.Name = "dgv_StudentList";
             this.dgv_StudentList.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgv_StudentList.RowHeadersWidth = 20;
             this.dgv_StudentList.RowTemplate.Height = 50;
-            this.dgv_StudentList.Size = new System.Drawing.Size(796, 461);
+            this.dgv_StudentList.Size = new System.Drawing.Size(1012, 461);
             this.dgv_StudentList.TabIndex = 43;
             this.dgv_StudentList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_StudentList_CellClick);
             // 
-            // StudentID
+            // sid
             // 
-            this.StudentID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.StudentID.DataPropertyName = "StudentID";
-            this.StudentID.HeaderText = "Student ID";
-            this.StudentID.MinimumWidth = 6;
-            this.StudentID.Name = "StudentID";
-            this.StudentID.Width = 117;
+            this.sid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sid.DataPropertyName = "StudentID";
+            this.sid.HeaderText = "Student ID";
+            this.sid.MinimumWidth = 6;
+            this.sid.Name = "sid";
+            this.sid.Width = 108;
             // 
-            // Column1
+            // fn
             // 
-            this.Column1.DataPropertyName = "FirstName";
-            this.Column1.HeaderText = "First Name";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 115;
+            this.fn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fn.DataPropertyName = "FirstName";
+            this.fn.HeaderText = "Fname";
+            this.fn.MinimumWidth = 6;
+            this.fn.Name = "fn";
+            this.fn.Width = 89;
             // 
-            // Column2
+            // ln
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.DataPropertyName = "LastName";
-            this.Column2.HeaderText = "Last name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 117;
+            this.ln.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.ln.DataPropertyName = "LastName";
+            this.ln.HeaderText = "Lname";
+            this.ln.MinimumWidth = 6;
+            this.ln.Name = "ln";
+            this.ln.Width = 89;
             // 
-            // BirthDate
+            // dob
             // 
-            this.BirthDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BirthDate.DataPropertyName = "BirthDate";
-            this.BirthDate.HeaderText = "Birth Date";
-            this.BirthDate.MinimumWidth = 6;
-            this.BirthDate.Name = "BirthDate";
-            this.BirthDate.Width = 115;
+            this.dob.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dob.DataPropertyName = "BirthDate";
+            this.dob.HeaderText = "DOB";
+            this.dob.MinimumWidth = 6;
+            this.dob.Name = "dob";
+            this.dob.Width = 76;
             // 
-            // Sex
+            // gender
             // 
-            this.Sex.DataPropertyName = "Sex";
-            this.Sex.HeaderText = "Gender";
-            this.Sex.MinimumWidth = 6;
-            this.Sex.Name = "Sex";
-            this.Sex.Width = 80;
+            this.gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gender.DataPropertyName = "Sex";
+            this.gender.HeaderText = "Gender";
+            this.gender.MinimumWidth = 6;
+            this.gender.Name = "gender";
+            this.gender.Width = 93;
             // 
             // Phone
             // 
@@ -348,23 +384,41 @@
             this.Phone.Name = "Phone";
             this.Phone.Width = 85;
             // 
-            // Column3
+            // add
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "Address";
-            this.Column3.HeaderText = "Address";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
+            this.add.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.add.DataPropertyName = "Address";
+            this.add.HeaderText = "Address";
+            this.add.MinimumWidth = 6;
+            this.add.Name = "add";
             // 
-            // Column4
+            // email
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.DataPropertyName = "Face";
-            this.Column4.HeaderText = "Face";
-            this.Column4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 52;
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 6;
+            this.email.Name = "email";
+            this.email.Width = 80;
+            // 
+            // face
+            // 
+            this.face.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.face.DataPropertyName = "Face";
+            this.face.HeaderText = "Face";
+            this.face.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.face.MinimumWidth = 6;
+            this.face.Name = "face";
+            this.face.Width = 52;
+            // 
+            // select
+            // 
+            this.select.HeaderText = "Select course";
+            this.select.Image = global::textPicture.Properties.Resources._checked;
+            this.select.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.select.MinimumWidth = 30;
+            this.select.Name = "select";
+            this.select.Width = 30;
             // 
             // btn_Remove
             // 
@@ -386,45 +440,6 @@
             this.btn_Edit.UseVisualStyleBackColor = true;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(180)))));
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.btn_Search);
-            this.panel2.Controls.Add(this.txt_Search);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1249, 50);
-            this.panel2.TabIndex = 3;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(451, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 20);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Search box:";
-            // 
-            // btn_Search
-            // 
-            this.btn_Search.Location = new System.Drawing.Point(818, 3);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(81, 36);
-            this.btn_Search.TabIndex = 1;
-            this.btn_Search.Text = "search";
-            this.btn_Search.UseVisualStyleBackColor = true;
-            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
-            // 
-            // txt_Search
-            // 
-            this.txt_Search.Location = new System.Drawing.Point(555, 12);
-            this.txt_Search.Name = "txt_Search";
-            this.txt_Search.Size = new System.Drawing.Size(257, 27);
-            this.txt_Search.TabIndex = 0;
-            // 
             // btn_Reset
             // 
             this.btn_Reset.Location = new System.Drawing.Point(440, 639);
@@ -445,11 +460,32 @@
             this.lblTotal.TabIndex = 47;
             this.lblTotal.Text = "label10";
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Select course";
+            this.dataGridViewImageColumn1.Image = global::textPicture.Properties.Resources._checked;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewImageColumn1.Width = 125;
+            // 
+            // picFace
+            // 
+            this.picFace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.picFace.Location = new System.Drawing.Point(16, 429);
+            this.picFace.Name = "picFace";
+            this.picFace.Size = new System.Drawing.Size(167, 133);
+            this.picFace.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picFace.TabIndex = 41;
+            this.picFace.TabStop = false;
+            // 
             // ManageStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1249, 713);
+            this.ClientSize = new System.Drawing.Size(1462, 713);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btn_Reset);
             this.Controls.Add(this.btn_Edit);
@@ -479,13 +515,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ManageStudentForm";
             this.Text = "ManageStudentForm";
-            ((System.ComponentModel.ISupportInitialize)(this.picFace)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.pnlSex.ResumeLayout(false);
             this.pnlSex.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_StudentList)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picFace)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,14 +551,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_StudentList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StudentID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BirthDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewImageColumn Column4;
         private System.Windows.Forms.Button btn_Remove;
         private System.Windows.Forms.Button btn_Edit;
         private System.Windows.Forms.Panel panel2;
@@ -531,5 +559,16 @@
         private System.Windows.Forms.TextBox txt_Search;
         private System.Windows.Forms.Button btn_Reset;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ln;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dob;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn add;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewImageColumn face;
+        private System.Windows.Forms.DataGridViewImageColumn select;
     }
 }

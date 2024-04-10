@@ -58,7 +58,10 @@ namespace textPicture
 
         private void printToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PrinterForm printerForm = new PrinterForm();
+            this.Hide();
+            printerForm.ShowDialog();
+            this.Show();
         }
 
         private void menu_Admin_Click(object sender, EventArgs e)
@@ -146,6 +149,14 @@ namespace textPicture
             AddCourseFromStudentForm addCourseFromStudentForm = new AddCourseFromStudentForm();
             this.Hide();
             addCourseFromStudentForm.ShowDialog();
+            this.Show();
+        }
+
+        private void manageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageStudentForm manageStudentForm = new ManageStudentForm();
+            this.Hide();
+            manageStudentForm.ShowDialog();
             this.Show();
         }
     }

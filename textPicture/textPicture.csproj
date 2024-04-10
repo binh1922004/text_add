@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -115,7 +116,19 @@
       <DependentUpon>AvgScoreByCouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="CourseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseList.Designer.cs">
+      <DependentUpon>CourseList.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseRegister.cs" />
+    <Compile Include="CourseStudentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseStudentListForm.Designer.cs">
+      <DependentUpon>CourseStudentListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +271,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AvgScoreByCouse.resx">
       <DependentUpon>AvgScoreByCouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseList.resx">
+      <DependentUpon>CourseList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseStudentListForm.resx">
+      <DependentUpon>CourseStudentListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteCourseForm.resx">
       <DependentUpon>DeleteCourseForm.cs</DependentUpon>
@@ -407,6 +426,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SỰ KIỆN NÀO SẼ DIỄN RA VÀO NGÀY 15_01_2024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checked.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

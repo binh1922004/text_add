@@ -16,6 +16,8 @@ namespace textPicture
     public partial class ImportStudentForm : Form
     {
         MyDB db = new MyDB();
+        Student std = new Student();
+        System.Data.DataTable Exceldt;
         public ImportStudentForm()
         {
             InitializeComponent();
@@ -24,11 +26,11 @@ namespace textPicture
         private void ImportStudentForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'universityManageDataSet5.STUDENTDETAIL' table. You can move, or remove it, as needed.
-            this.sTUDENTDETAILTableAdapter2.Fill(this.universityManageDataSet5.STUDENTDETAIL);
-            // TODO: This line of code loads data into the 'universityManageDataSet1.STUDENTDETAIL' table. You can move, or remove it, as needed.
-            this.sTUDENTDETAILTableAdapter1.Fill(this.universityManageDataSet1.STUDENTDETAIL);
-            // TODO: This line of code loads data into the 'studentManageDataSet.StudentDetail' table. You can move, or remove it, as needed.
-            this.studentDetailTableAdapter.Fill(this.studentManageDataSet.StudentDetail);
+            //this.sTUDENTDETAILTableAdapter2.Fill(this.universityManageDataSet5.STUDENTDETAIL);
+            //// TODO: This line of code loads data into the 'universityManageDataSet1.STUDENTDETAIL' table. You can move, or remove it, as needed.
+            //this.sTUDENTDETAILTableAdapter1.Fill(this.universityManageDataSet1.STUDENTDETAIL);
+            //// TODO: This line of code loads data into the 'studentManageDataSet.StudentDetail' table. You can move, or remove it, as needed.
+            //this.studentDetailTableAdapter.Fill(this.studentManageDataSet.StudentDetail);
 
         }
 
@@ -55,39 +57,20 @@ namespace textPicture
                 Econ.Close();//close Excel connection after adding to data set
                 oda.Fill(ds);
                 ds.Tables[0].Columns.Add("ImageFromPath", typeof(byte[]));
+                ds.Tables[0].Columns.Add("NewPhone", typeof(string));
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                 {
                     ds.Tables[0].Rows[i]["Email"] = ds.Tables[0].Rows[i]["ID"] + "@hcmute.edu.vn";
                     string path = ds.Tables[0].Rows[i]["Image"].ToString();
                     ds.Tables[0].Rows[i]["ImageFromPath"] = File.ReadAllBytes(path);
+                    ds.Tables[0].Rows[i]["NewPhone"] ="0" + ds.Tables[0].Rows[i]["Phone"].ToString();
                 }
-                System.Data.DataTable Exceldt = ds.Tables[0];
+                ds.Tables[0].Columns.Remove("Image");
+                ds.Tables[0].Columns.Remove("Phone");
 
-
-                Exceldt.AcceptChanges();
-                //creating object of SqlBulkCopy
-                SqlConnection con = db.SqlCon;
-                SqlBulkCopy objbulk = new SqlBulkCopy(con);
-                //assigning Destination table name
-                objbulk.DestinationTableName = "STUDENTDETAIL";
-                //Mapping Table column
-                objbulk.ColumnMappings.Add("ID", "StudentID");
-                objbulk.ColumnMappings.Add("First", "FirstName");
-                objbulk.ColumnMappings.Add("Last", "LastName");
-                objbulk.ColumnMappings.Add("Birth", "BirthDate");
-                objbulk.ColumnMappings.Add("Gender", "Sex");
-                objbulk.ColumnMappings.Add("Phone", "Phone");
-                objbulk.ColumnMappings.Add("Address", "Address");
-                objbulk.ColumnMappings.Add("Email", "Email");
-                objbulk.ColumnMappings.Add("ImageFromPath", "Face");
-
-                //inserting Datatable Records to DataBase
-                SqlConnection sqlConnection = db.SqlCon;
-                con.Open();
-                objbulk.WriteToServer(Exceldt);
-                con.Close();
-                MessageBox.Show("Data has been Imported successfully.", "Imported", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadData("select * from STUDENTDETAIL");
+                Exceldt = ds.Tables[0];
+                dgv_StudentList.DataSource = Exceldt;
+               
             }
             catch (Exception ex)
             {
@@ -97,19 +80,63 @@ namespace textPicture
 
         private void LoadData(string query)
         {
-            try
+            //try
+            //{
+            //    SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
+            //    DataTable dt = new DataTable();
+            //    db.OpenConnection();
+            //    adapter.Fill(dt);
+            //    dgv_StudentList.DataSource = dt;
+            //    db.CloseConnection();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+        }
+
+        private void btn_CheckData_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Exceldt.Rows.Count; i++)
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
-                DataTable dt = new DataTable();
-                db.OpenConnection();
-                adapter.Fill(dt);
-                dgv_StudentList.DataSource = dt;
-                db.CloseConnection();
+                string id = Exceldt.Rows[i]["ID"].ToString();
+                string fn = Exceldt.Rows[i]["First"].ToString();
+                string ln = Exceldt.Rows[i]["Last"].ToString();
+                string phone = Exceldt.Rows[i]["NewPhone"].ToString();
+                string birt = Exceldt.Rows[i]["Birth"].ToString();
+                string add = Exceldt.Rows[i]["Address"].ToString();
+                if (!Student.verif(id, fn, ln, birt, phone, add, i + 1))
+                {
+                    btn_Save.Enabled = false;
+                    return;
+                }
             }
-            catch (Exception ex)
+            MessageBox.Show("Valid value");
+            btn_Save.Enabled = true;
+        }
+
+        private void btn_Save_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < Exceldt.Rows.Count; i++)
             {
-                MessageBox.Show(ex.Message);
+                string id = Exceldt.Rows[i]["ID"].ToString();
+                string fn = Exceldt.Rows[i]["First"].ToString();
+                string ln = Exceldt.Rows[i]["Last"].ToString();
+                string phone = Exceldt.Rows[i]["NewPhone"].ToString();
+                string birt = Exceldt.Rows[i]["Birth"].ToString();
+                string add = Exceldt.Rows[i]["Address"].ToString();
+                string email = Exceldt.Rows[i]["Email"].ToString();
+                string gender = Exceldt.Rows[i]["Gender"].ToString();
+                var data = (Byte[])Exceldt.Rows[i]["ImageFromPath"];
+                var pic = new MemoryStream(data);
+
+                if (std.searchStudent(id) == true)
+                {
+                    Student.deleteStudent(id);
+                }
+                Student.InsertStudent(id, fn, ln, birt, gender, phone, add, pic, "import");
             }
+            MessageBox.Show("Successfully import");
         }
     }
 }

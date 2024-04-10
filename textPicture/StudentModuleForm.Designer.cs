@@ -209,6 +209,7 @@
             this.btn_Image.TabIndex = 17;
             this.btn_Image.Text = "Upload";
             this.btn_Image.UseVisualStyleBackColor = true;
+            this.btn_Image.Click += new System.EventHandler(this.btn_Image_Click);
             // 
             // btn_FindID
             // 
