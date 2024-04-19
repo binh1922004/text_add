@@ -44,8 +44,12 @@
             this.cbb_RemoveGroup = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_Remove = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_EditContact = new System.Windows.Forms.Button();
+            this.btn_AddContact = new System.Windows.Forms.Button();
+            this.btn_RemoveContact = new System.Windows.Forms.Button();
+            this.txt_contactID = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_RemoveContactSelect = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -192,25 +196,65 @@
             this.btn_Remove.Text = "Remove";
             this.btn_Remove.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_EditContact
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.Location = new System.Drawing.Point(27, 168);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 28);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "Edit";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_EditContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_EditContact.Location = new System.Drawing.Point(27, 168);
+            this.btn_EditContact.Name = "btn_EditContact";
+            this.btn_EditContact.Size = new System.Drawing.Size(119, 28);
+            this.btn_EditContact.TabIndex = 26;
+            this.btn_EditContact.Text = "Edit";
+            this.btn_EditContact.UseVisualStyleBackColor = false;
+            this.btn_EditContact.Click += new System.EventHandler(this.btn_EditContact_Click);
             // 
-            // button2
+            // btn_AddContact
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button2.Location = new System.Drawing.Point(27, 128);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(119, 28);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_AddContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_AddContact.Location = new System.Drawing.Point(27, 128);
+            this.btn_AddContact.Name = "btn_AddContact";
+            this.btn_AddContact.Size = new System.Drawing.Size(119, 28);
+            this.btn_AddContact.TabIndex = 25;
+            this.btn_AddContact.Text = "Add";
+            this.btn_AddContact.UseVisualStyleBackColor = false;
+            this.btn_AddContact.Click += new System.EventHandler(this.btn_AddContact_Click);
+            // 
+            // btn_RemoveContact
+            // 
+            this.btn_RemoveContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_RemoveContact.Location = new System.Drawing.Point(162, 357);
+            this.btn_RemoveContact.Name = "btn_RemoveContact";
+            this.btn_RemoveContact.Size = new System.Drawing.Size(119, 28);
+            this.btn_RemoveContact.TabIndex = 27;
+            this.btn_RemoveContact.Text = "Remove";
+            this.btn_RemoveContact.UseVisualStyleBackColor = false;
+            // 
+            // txt_contactID
+            // 
+            this.txt_contactID.Location = new System.Drawing.Point(162, 308);
+            this.txt_contactID.Name = "txt_contactID";
+            this.txt_contactID.ReadOnly = true;
+            this.txt_contactID.Size = new System.Drawing.Size(119, 27);
+            this.txt_contactID.TabIndex = 28;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(2, 311);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(154, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Select group name:";
+            // 
+            // btn_RemoveContactSelect
+            // 
+            this.btn_RemoveContactSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btn_RemoveContactSelect.Location = new System.Drawing.Point(287, 308);
+            this.btn_RemoveContactSelect.Name = "btn_RemoveContactSelect";
+            this.btn_RemoveContactSelect.Size = new System.Drawing.Size(119, 28);
+            this.btn_RemoveContactSelect.TabIndex = 30;
+            this.btn_RemoveContactSelect.Text = "Select";
+            this.btn_RemoveContactSelect.UseVisualStyleBackColor = false;
+            this.btn_RemoveContactSelect.Click += new System.EventHandler(this.btn_RemoveContactSelect_Click);
             // 
             // UserMainForm
             // 
@@ -218,8 +262,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(802, 642);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_RemoveContactSelect);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txt_contactID);
+            this.Controls.Add(this.btn_RemoveContact);
+            this.Controls.Add(this.btn_EditContact);
+            this.Controls.Add(this.btn_AddContact);
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.cbb_RemoveGroup);
             this.Controls.Add(this.label6);
@@ -236,7 +284,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserMainForm";
             this.Text = "UserMainForm";
             this.Load += new System.EventHandler(this.UserMainForm_Load);
@@ -265,7 +313,11 @@
         private System.Windows.Forms.ComboBox cbb_RemoveGroup;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_Remove;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_EditContact;
+        private System.Windows.Forms.Button btn_AddContact;
+        private System.Windows.Forms.Button btn_RemoveContact;
+        private System.Windows.Forms.TextBox txt_contactID;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_RemoveContactSelect;
     }
 }

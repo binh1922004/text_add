@@ -47,5 +47,28 @@ namespace textPicture
             cbb_RemoveGroup.DisplayMember = "name";
             cbb_RemoveGroup.ValueMember = "id";
         }
+
+        private void btn_AddContact_Click(object sender, EventArgs e)
+        {
+            AddContactForm addContactForm = new AddContactForm();
+            addContactForm.ShowDialog();
+        }
+
+        private void btn_EditContact_Click(object sender, EventArgs e)
+        {
+            EditContactForm editContactForm = new EditContactForm();
+            this.Hide();
+            editContactForm.ShowDialog();
+            this.Show();
+        }
+
+        private void btn_RemoveContactSelect_Click(object sender, EventArgs e)
+        {
+            EditContactModuleForm editContactModuleForm = new EditContactModuleForm();
+            if (editContactModuleForm.ShowDialog() == DialogResult.OK)
+            {
+                txt
+            }
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace textPicture
             //Application.Run(new MainForm("user"));
 
             Application.Run(new Loginform());
+            //Application.Run(new EditContactModuleForm());
         }
     }
 }

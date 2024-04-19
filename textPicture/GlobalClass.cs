@@ -12,5 +12,7 @@ namespace textPicture
         public static string userID;
         public static string userName;
         public static Image img;
+
+        public static string contactID;
     }
 }

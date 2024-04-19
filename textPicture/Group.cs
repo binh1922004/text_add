@@ -27,11 +27,7 @@ namespace textPicture
                 MessageBox.Show("Please enter number in ID");
                 return false;
             }
-            else if (existGroup(id))
-            {
-                MessageBox.Show("This group id already exists");
-                return false;
-            }
+            
 
             return true;
         }
@@ -53,7 +49,11 @@ namespace textPicture
             {
                 if (!verif(id, name))
                     return;
-
+                else if (existGroup(id))
+                {
+                    MessageBox.Show("This group id already exists");
+                    return;
+                }
                 string query = "insert into [Group] values(@id, @gname, @userid)";
                 SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
                 db.OpenConnection();

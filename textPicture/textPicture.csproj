@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCourse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,18 @@
     </Compile>
     <Compile Include="DeleteCourseForm.Designer.cs">
       <DependentUpon>DeleteCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditContactForm.Designer.cs">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditContactModuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditContactModuleForm.Designer.cs">
+      <DependentUpon>EditContactModuleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EditCourseForm.cs">
       <SubType>Form</SubType>
@@ -275,6 +293,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UniversityManageDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UniversityManageDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityManageDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UniversityManageDataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UniversityManageDataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserMainForm.cs">
       <SubType>Form</SubType>
@@ -282,6 +310,9 @@
     <Compile Include="UserMainForm.Designer.cs">
       <DependentUpon>UserMainForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCourse.resx">
       <DependentUpon>AddCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteCourseForm.resx">
       <DependentUpon>DeleteCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditContactForm.resx">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditContactModuleForm.resx">
+      <DependentUpon>EditContactModuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
@@ -456,6 +493,28 @@
     </None>
     <None Include="UniversityManageDataSet5.xss">
       <DependentUpon>UniversityManageDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet6.xsc">
+      <DependentUpon>UniversityManageDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityManageDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityManageDataSet6.xss">
+      <DependentUpon>UniversityManageDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet7.xsc">
+      <DependentUpon>UniversityManageDataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="UniversityManageDataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UniversityManageDataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UniversityManageDataSet7.xss">
+      <DependentUpon>UniversityManageDataSet7.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
