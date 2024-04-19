@@ -86,5 +86,14 @@ namespace textPicture
             return dt;
         }
 
+        public DataTable getAvgScoreByStudent()
+        {
+            string query = "select AVG(sc.score)\r\nfrom Score sc\r\ngroup by sc.student_id\r\n";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
+            db.OpenConnection();
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
     }
 }

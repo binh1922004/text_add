@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,50 +37,31 @@
             this.txt_Score = new System.Windows.Forms.TextBox();
             this.txt_Des = new System.Windows.Forms.TextBox();
             this.dgv_DataStudent = new System.Windows.Forms.DataGridView();
+            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTUDENTDETAILBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.universityManageDataSet4 = new textPicture.UniversityManageDataSet4();
             this.studentManageDataSet = new textPicture.StudentManageDataSet();
             this.studentDetailBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentDetailTableAdapter = new textPicture.StudentManageDataSetTableAdapters.StudentDetailTableAdapter();
             this.universityManageDataSet3 = new textPicture.UniversityManageDataSet3();
             this.sTUDENTDETAILBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sTUDENTDETAILTableAdapter1 = new textPicture.UniversityManageDataSet3TableAdapters.STUDENTDETAILTableAdapter();
-            this.universityManageDataSet4 = new textPicture.UniversityManageDataSet4();
-            this.sTUDENTDETAILBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.sTUDENTDETAILTableAdapter2 = new textPicture.UniversityManageDataSet4TableAdapters.STUDENTDETAILTableAdapter();
-            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbb_Course = new System.Windows.Forms.ComboBox();
             this.btn_AddScore = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DataStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTDETAILBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universityManageDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.universityManageDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTDETAILBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.universityManageDataSet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTDETAILBindingSource2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Purple;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(889, 61);
-            this.panel1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(382, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Add score";
             // 
             // label2
             // 
@@ -159,6 +138,41 @@
             this.dgv_DataStudent.TabIndex = 9;
             this.dgv_DataStudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_DataStudent_CellClick);
             // 
+            // studentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "StudentID";
+            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            this.studentIDDataGridViewTextBoxColumn.Width = 112;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // sTUDENTDETAILBindingSource2
+            // 
+            this.sTUDENTDETAILBindingSource2.DataMember = "STUDENTDETAIL";
+            this.sTUDENTDETAILBindingSource2.DataSource = this.universityManageDataSet4;
+            // 
+            // universityManageDataSet4
+            // 
+            this.universityManageDataSet4.DataSetName = "UniversityManageDataSet4";
+            this.universityManageDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // studentManageDataSet
             // 
             this.studentManageDataSet.DataSetName = "StudentManageDataSet";
@@ -187,44 +201,9 @@
             // 
             this.sTUDENTDETAILTableAdapter1.ClearBeforeFill = true;
             // 
-            // universityManageDataSet4
-            // 
-            this.universityManageDataSet4.DataSetName = "UniversityManageDataSet4";
-            this.universityManageDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sTUDENTDETAILBindingSource2
-            // 
-            this.sTUDENTDETAILBindingSource2.DataMember = "STUDENTDETAIL";
-            this.sTUDENTDETAILBindingSource2.DataSource = this.universityManageDataSet4;
-            // 
             // sTUDENTDETAILTableAdapter2
             // 
             this.sTUDENTDETAILTableAdapter2.ClearBeforeFill = true;
-            // 
-            // studentIDDataGridViewTextBoxColumn
-            // 
-            this.studentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.HeaderText = "StudentID";
-            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
-            this.studentIDDataGridViewTextBoxColumn.Width = 112;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
             // 
             // cbb_Course
             // 
@@ -245,6 +224,27 @@
             this.btn_AddScore.UseVisualStyleBackColor = true;
             this.btn_AddScore.Click += new System.EventHandler(this.btn_AddScore_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(382, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(122, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add score";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Purple;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(889, 61);
+            this.panel1.TabIndex = 1;
+            // 
             // AddScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -262,28 +262,25 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddScoreForm";
             this.Text = "AddScoreForm";
             this.Load += new System.EventHandler(this.AddScoreForm_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DataStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTDETAILBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.universityManageDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManageDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDetailBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.universityManageDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sTUDENTDETAILBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.universityManageDataSet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sTUDENTDETAILBindingSource2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -306,5 +303,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox cbb_Course;
         private System.Windows.Forms.Button btn_AddScore;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

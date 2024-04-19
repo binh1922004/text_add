@@ -11,11 +11,12 @@ namespace textPicture
     {
         MyDB db = new MyDB();
 
-        public bool insertCourseAndStudent(string stID, string cID)
+        public bool insertCourseAndStudent(string stID, string cID, string label)
         {
-            string query = "insert into CourseRegister values(@stid, @cid)";
+            string query = "insert into CourseRegister values(@stid, @cid, @label)";
             SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
             sqlCmd.Parameters.Add(new SqlParameter("@stid", System.Data.SqlDbType.VarChar)).Value = stID;
+            sqlCmd.Parameters.Add(new SqlParameter("@label", System.Data.SqlDbType.VarChar)).Value = label;
             sqlCmd.Parameters.Add(new SqlParameter("@cid", System.Data.SqlDbType.Int)).Value = cID;
             db.OpenConnection();
             int k = sqlCmd.ExecuteNonQuery();

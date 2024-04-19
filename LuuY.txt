@@ -1,0 +1,1 @@
+Thưa thầy, do lúc đầu em không tạo proj mới mà làm trên textPicture.sln luôn nên bây giờ thầy cho em xin phép nộp source từ file này ạ

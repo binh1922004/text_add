@@ -41,6 +41,8 @@
             this.err_User = new System.Windows.Forms.ErrorProvider(this.components);
             this.btn_Reg = new System.Windows.Forms.Button();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.rbtn_User = new System.Windows.Forms.RadioButton();
+            this.rbtn_Std = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.err_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +95,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(121, 268);
+            this.btnLogin.Location = new System.Drawing.Point(119, 334);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(102, 41);
             this.btnLogin.TabIndex = 6;
@@ -103,7 +105,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(283, 268);
+            this.btnCancel.Location = new System.Drawing.Point(281, 334);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 41);
             this.btnCancel.TabIndex = 7;
@@ -127,7 +129,7 @@
             // 
             // btn_Reg
             // 
-            this.btn_Reg.Location = new System.Drawing.Point(200, 327);
+            this.btn_Reg.Location = new System.Drawing.Point(202, 390);
             this.btn_Reg.Name = "btn_Reg";
             this.btn_Reg.Size = new System.Drawing.Size(102, 41);
             this.btn_Reg.TabIndex = 8;
@@ -147,12 +149,36 @@
             this.picLogo.TabIndex = 0;
             this.picLogo.TabStop = false;
             // 
-            // Form1
+            // rbtn_User
+            // 
+            this.rbtn_User.AutoSize = true;
+            this.rbtn_User.Location = new System.Drawing.Point(118, 284);
+            this.rbtn_User.Name = "rbtn_User";
+            this.rbtn_User.Size = new System.Drawing.Size(74, 29);
+            this.rbtn_User.TabIndex = 9;
+            this.rbtn_User.TabStop = true;
+            this.rbtn_User.Text = "User";
+            this.rbtn_User.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_Std
+            // 
+            this.rbtn_Std.AutoSize = true;
+            this.rbtn_Std.Location = new System.Drawing.Point(281, 284);
+            this.rbtn_Std.Name = "rbtn_Std";
+            this.rbtn_Std.Size = new System.Drawing.Size(101, 29);
+            this.rbtn_Std.TabIndex = 10;
+            this.rbtn_Std.TabStop = true;
+            this.rbtn_Std.Text = "Student";
+            this.rbtn_Std.UseVisualStyleBackColor = true;
+            // 
+            // Loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(498, 463);
+            this.Controls.Add(this.rbtn_Std);
+            this.Controls.Add(this.rbtn_User);
             this.Controls.Add(this.btn_Reg);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnLogin);
@@ -164,7 +190,7 @@
             this.Controls.Add(this.picLogo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "Loginform";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.err_User)).EndInit();
@@ -188,6 +214,8 @@
         private System.Windows.Forms.ToolTip tt_Pass;
         private System.Windows.Forms.ErrorProvider err_User;
         private System.Windows.Forms.Button btn_Reg;
+        private System.Windows.Forms.RadioButton rbtn_Std;
+        private System.Windows.Forms.RadioButton rbtn_User;
     }
 }
 

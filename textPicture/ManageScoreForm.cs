@@ -25,13 +25,23 @@ namespace textPicture
         }
         private void btn_ShowStudent_Click(object sender, EventArgs e)
         {
+            clear();
             dgv_DataStudent.Visible = true;
             dgv_DataStudent.DataSource = score.getScoreTable("select studentid, firstname, lastname from StudentDetail");
             dgv_DataScore.Visible = false;
         }
 
+        private void clear()
+        {
+            txt_Des.Text = "";
+            txt_Score.Text = "";
+            txt_SID.Text = "";
+            cbb_Course.SelectedItem = null;
+        }
+
         private void btn_ShowScore_Click(object sender, EventArgs e)
         {
+            clear();
             dgv_DataScore.Visible = true;
             dgv_DataScore.DataSource = score.getScoreTable();
             dgv_DataStudent.Visible = false;

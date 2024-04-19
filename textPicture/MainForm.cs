@@ -159,5 +159,29 @@ namespace textPicture
             manageStudentForm.ShowDialog();
             this.Show();
         }
+
+        private void aVGResultByScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AvgResultByScore avgResultByScore = new AvgResultByScore();
+            this.Hide();
+            avgResultByScore.ShowDialog();
+                this.Show();
+        }
+
+        private void avgResultByScoreToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AvgResultByScore avgResultByScore = new AvgResultByScore();
+            this.Hide();
+            avgResultByScore.ShowDialog();
+            this.Show();
+        }
+
+        private void staticResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticResult staticResult = new StaticResult();
+            this.Hide();
+            staticResult.ShowDialog();
+            this.Show();
+        }
     }
 }
