@@ -9,10 +9,17 @@ namespace textPicture
 {
     internal class GlobalClass
     {
-        public static string userID;
+        //info login
+        public static string ID = "1";
         public static string userName;
+        public static string userID;
         public static Image img;
 
+
         public static string contactID;
+        public static string contactName;
+
+        public static string role;
+
     }
 }

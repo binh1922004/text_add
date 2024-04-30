@@ -109,6 +109,7 @@
             this.btn_Edit.TabIndex = 44;
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Upload
             // 
@@ -121,6 +122,7 @@
             // 
             // pic_Face
             // 
+            this.pic_Face.Image = global::textPicture.Properties.Resources.logofit;
             this.pic_Face.Location = new System.Drawing.Point(183, 463);
             this.pic_Face.Name = "pic_Face";
             this.pic_Face.Size = new System.Drawing.Size(159, 107);

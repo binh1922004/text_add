@@ -162,6 +162,7 @@
             // 
             // pic_Face
             // 
+            this.pic_Face.Image = global::textPicture.Properties.Resources.logofit;
             this.pic_Face.Location = new System.Drawing.Point(218, 400);
             this.pic_Face.Name = "pic_Face";
             this.pic_Face.Size = new System.Drawing.Size(157, 127);
@@ -215,7 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RegisterUserForm";
             this.Text = "RegisterUserForm";
             this.Load += new System.EventHandler(this.RegisterUserForm_Load);

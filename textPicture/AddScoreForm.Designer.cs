@@ -66,7 +66,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(72, 119);
+            this.label2.Location = new System.Drawing.Point(72, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 20);
             this.label2.TabIndex = 2;
@@ -75,7 +75,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 171);
+            this.label3.Location = new System.Drawing.Point(4, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 20);
             this.label3.TabIndex = 3;
@@ -101,7 +101,7 @@
             // 
             // txt_SID
             // 
-            this.txt_SID.Location = new System.Drawing.Point(237, 112);
+            this.txt_SID.Location = new System.Drawing.Point(237, 163);
             this.txt_SID.Name = "txt_SID";
             this.txt_SID.Size = new System.Drawing.Size(215, 27);
             this.txt_SID.TabIndex = 6;
@@ -208,7 +208,7 @@
             // cbb_Course
             // 
             this.cbb_Course.FormattingEnabled = true;
-            this.cbb_Course.Location = new System.Drawing.Point(237, 163);
+            this.cbb_Course.Location = new System.Drawing.Point(169, 67);
             this.cbb_Course.Name = "cbb_Course";
             this.cbb_Course.Size = new System.Drawing.Size(215, 28);
             this.cbb_Course.TabIndex = 10;

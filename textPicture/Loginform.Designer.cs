@@ -43,6 +43,7 @@
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.rbtn_User = new System.Windows.Forms.RadioButton();
             this.rbtn_Std = new System.Windows.Forms.RadioButton();
+            this.rbtn_Admin = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.err_User)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -152,7 +153,7 @@
             // rbtn_User
             // 
             this.rbtn_User.AutoSize = true;
-            this.rbtn_User.Location = new System.Drawing.Point(118, 284);
+            this.rbtn_User.Location = new System.Drawing.Point(104, 281);
             this.rbtn_User.Name = "rbtn_User";
             this.rbtn_User.Size = new System.Drawing.Size(74, 29);
             this.rbtn_User.TabIndex = 9;
@@ -163,7 +164,7 @@
             // rbtn_Std
             // 
             this.rbtn_Std.AutoSize = true;
-            this.rbtn_Std.Location = new System.Drawing.Point(281, 284);
+            this.rbtn_Std.Location = new System.Drawing.Point(205, 281);
             this.rbtn_Std.Name = "rbtn_Std";
             this.rbtn_Std.Size = new System.Drawing.Size(101, 29);
             this.rbtn_Std.TabIndex = 10;
@@ -171,12 +172,25 @@
             this.rbtn_Std.Text = "Student";
             this.rbtn_Std.UseVisualStyleBackColor = true;
             // 
+            // rbtn_Admin
+            // 
+            this.rbtn_Admin.AutoSize = true;
+            this.rbtn_Admin.Checked = true;
+            this.rbtn_Admin.Location = new System.Drawing.Point(328, 281);
+            this.rbtn_Admin.Name = "rbtn_Admin";
+            this.rbtn_Admin.Size = new System.Drawing.Size(89, 29);
+            this.rbtn_Admin.TabIndex = 11;
+            this.rbtn_Admin.TabStop = true;
+            this.rbtn_Admin.Text = "Admin";
+            this.rbtn_Admin.UseVisualStyleBackColor = true;
+            // 
             // Loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(498, 463);
+            this.Controls.Add(this.rbtn_Admin);
             this.Controls.Add(this.rbtn_Std);
             this.Controls.Add(this.rbtn_User);
             this.Controls.Add(this.btn_Reg);
@@ -216,6 +230,7 @@
         private System.Windows.Forms.Button btn_Reg;
         private System.Windows.Forms.RadioButton rbtn_Std;
         private System.Windows.Forms.RadioButton rbtn_User;
+        private System.Windows.Forms.RadioButton rbtn_Admin;
     }
 }
 

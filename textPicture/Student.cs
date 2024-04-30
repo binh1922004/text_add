@@ -161,7 +161,7 @@ namespace textPicture
             }
             sqlCon.CloseConnection();
         }
-        public DataTable getAllStudent(string query)
+        public DataTable getAllStudent(string query = "select * from StudentDetail")
         {
             DataTable dt = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);

@@ -17,11 +17,19 @@ namespace textPicture
         public StudentListForm()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public StudentListForm(string query)
+        {
+            InitializeComponent();
+            LoadData(query);
+            dgv_StudentList.Enabled = false;
         }
 
         private void StudentListForm_Load(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
         }
 
         private void LoadData(string query = "select * from StudentDetail")

@@ -17,7 +17,7 @@ namespace textPicture
         {
             if (id.Trim() == "" || fname.Trim() == "" || lname.Trim() == "" || gr.Trim() == "" || phone.Trim() == "" || mail.Trim() == "" || add.Trim() == "")
             {
-                MessageBox.Show("Plase dont empty");
+                MessageBox.Show("Please dont empty");
                 return false;
             }
             else if (!id.All(char.IsDigit))
@@ -79,7 +79,7 @@ namespace textPicture
                 sqlCmd.Parameters.Add(new SqlParameter("@mail", System.Data.SqlDbType.VarChar)).Value = mail;
                 sqlCmd.Parameters.Add(new SqlParameter("@add", System.Data.SqlDbType.Text)).Value = add;
                 sqlCmd.Parameters.Add(new SqlParameter("@pic", System.Data.SqlDbType.Image)).Value = pic.ToArray();
-                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.userID;
+                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.ID;
 
                 int k = sqlCmd.ExecuteNonQuery();
                 db.CloseConnection();
@@ -106,7 +106,7 @@ namespace textPicture
                 {
                     return;
                 }
-                string query = "update Contact set fname = @fn, lname = @ln, groupid = @gr, phone = @phone, mail = @mail, address = @add, " +
+                string query = "update Contact set fname = @fn, lname = @ln, groupid = @gr, phone = @phone, email = @mail, address = @add, " +
                     "pic = @pic where id = @id";
                 SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
                 db.OpenConnection();
@@ -136,11 +136,33 @@ namespace textPicture
                 MessageBox.Show(ex.Message);
             }
         }
+        public void removeContact(string id)
+        {
+            try
+            {
+                string query = "delete from Contact where id = " + id;
+                SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
+                db.OpenConnection();
 
+                int k = sqlCmd.ExecuteNonQuery();
+                if (k == 1)
+                {
+                    MessageBox.Show("Successfully remove");
+                }
+                else
+                {
+                    MessageBox.Show("Something wrong");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         public DataTable getAllContact()
         {
-            string query = "seclet * from Contact where userid = " + GlobalClass.userID;
+            string query = "select * from Contact where userid = " + GlobalClass.ID;
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
             db.OpenConnection();
             DataTable dt = new DataTable();
@@ -153,6 +175,17 @@ namespace textPicture
         public DataTable getContactByID(string id)
         {
             string query = "select * from Contact where id = " + id;
+            SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
+            db.OpenConnection();
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            db.CloseConnection();
+            return dt;
+        }
+
+        internal DataTable getCOntactByGrID(string grid)
+        {
+            string query = "select id, fname, lname, phone, address, pic from Contact where groupid = " + grid;
             SqlDataAdapter adapter = new SqlDataAdapter(query, db.SqlCon);
             db.OpenConnection();
             DataTable dt = new DataTable();

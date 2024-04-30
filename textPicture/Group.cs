@@ -58,7 +58,7 @@ namespace textPicture
                 SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
                 db.OpenConnection();
                 sqlCmd.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int)).Value = id;
-                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.userID;
+                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.ID;
                 sqlCmd.Parameters.Add(new SqlParameter("@gname", System.Data.SqlDbType.VarChar)).Value = name;
                 int k = sqlCmd.ExecuteNonQuery();
                 if (k == 1)
@@ -91,8 +91,8 @@ namespace textPicture
                 db.OpenConnection();
 
                 sqlCmd.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int)).Value = id;
-                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.userID;
-                sqlCmd.Parameters.Add(new SqlParameter("@gname", System.Data.SqlDbType.VarChar)).Value = name;
+                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.ID;
+                sqlCmd.Parameters.Add(new SqlParameter("@name", System.Data.SqlDbType.VarChar)).Value = name;
 
                 int k = sqlCmd.ExecuteNonQuery();
                 if (k == 1)
@@ -115,12 +115,11 @@ namespace textPicture
         {
             try
             {
-                string query = "delete from [Group] where id = @id, userid = @userid";
+                string query = "delete from [Group] where id = @id";
                 SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
                 db.OpenConnection();
 
                 sqlCmd.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int)).Value = id;
-                sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.userID;
                 int k = sqlCmd.ExecuteNonQuery();
                 if (k == 1)
                 {
@@ -143,7 +142,7 @@ namespace textPicture
             string query = "select * from [Group] where userid = @userid";
             SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
 
-            sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.userID;
+            sqlCmd.Parameters.Add(new SqlParameter("@userid", System.Data.SqlDbType.Int)).Value = GlobalClass.ID;
             db.OpenConnection();
 
             DataTable dt = new DataTable();

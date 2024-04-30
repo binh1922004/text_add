@@ -24,44 +24,37 @@ namespace textPicture
         {
             string userid = txtUser.Text;
             string pass = txtPass.Text;
+            if (rbtn_Admin.Checked)
+                GlobalClass.role = "admin";
+            else if (rbtn_Std.Checked)
+                GlobalClass.role = "std";
+            else
+                GlobalClass.role = "hr";
+
+
+            if (!user.loginCheck(userid, pass))
+            {
+                return;
+            }
+
             if (rbtn_Std.Checked)
             {
-                MyDB db = new MyDB();
-
-                SqlCommand sqlCmd = new SqlCommand("select * from DataUser " +
-      "where(ID = @ID AND Pass = @Pass)", db.SqlCon);
-                sqlCmd.Parameters.Add(new SqlParameter("@ID", SqlDbType.NChar)).Value = userid;
-                sqlCmd.Parameters.Add(new SqlParameter("@Pass", SqlDbType.NChar)).Value = pass;
-                db.OpenConnection();
-                SqlDataReader reader = sqlCmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    string stt = reader.GetString(2).Trim();
-                    if (stt != "waiting")
-                    {
-                        MainForm mainForm = new MainForm(stt);
-                        mainForm.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("This account is not accept");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Invalid user or password, please enter again");
-                }
-                reader.Close();
-                db.CloseConnection();
+                StudentMainForm stdMainForm = new StudentMainForm();   
+                this.Hide();
+                stdMainForm.ShowDialog();
+                this.Close();
             }
             else if (rbtn_User.Checked)
             {
-                if (user.loginCheck(userid, pass))
-                {
-                    UserMainForm mainUserForm = new UserMainForm();
-                    mainUserForm.ShowDialog();
-                    this.Close();
-                }
+                UserMainForm mainUserForm = new UserMainForm();
+                mainUserForm.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MainForm main = new MainForm("admin");
+                main.ShowDialog();
+                this.Close();
             }
             //timer1.Start();
         }
@@ -70,18 +63,21 @@ namespace textPicture
         {
             if (rbtn_Std.Checked)
             {
-                RegisterForm registerForm = new RegisterForm();
-                this.Hide();
-                registerForm.ShowDialog();
-                this.Show();
+                GlobalClass.role = "std";
+            }
+            else if (rbtn_Admin.Checked)
+            {
+                GlobalClass.role = "admin";
             }
             else
             {
-                RegisterUserForm registerForm = new RegisterUserForm();
-                this.Hide();
-                registerForm.ShowDialog();
-                this.Show();
+                GlobalClass.role = "hr";
+                
             }
+            RegisterUserForm registerForm = new RegisterUserForm();
+            this.Hide();
+            registerForm.ShowDialog();
+            this.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)

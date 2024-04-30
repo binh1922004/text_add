@@ -36,6 +36,7 @@ namespace textPicture
             this.stid = stID;
             txt_ID.Text = stID;
             txt_ID.ReadOnly = true;
+            btn_Find.Enabled = false;
             LoadData();
         }
 

@@ -32,13 +32,13 @@ namespace textPicture
             double pass = 0;
             foreach (DataRow dr in dt.Rows)
             {
+                
                 if (double.Parse(dr[0].ToString()) >= 5)
                 {
                     pass++;
                 }
             }
-
-            double percentPass = Math.Round(pass / sum, 2);
+            double percentPass = Math.Round((pass / sum)*100, 2);
             double percentFail = 100 - percentPass;
 
             lbl_Fail.Text += percentFail.ToString();

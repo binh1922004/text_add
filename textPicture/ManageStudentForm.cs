@@ -20,6 +20,12 @@ namespace textPicture
             InitializeComponent();
             LoadData();
         }
+        public ManageStudentForm(string query)
+        {
+            InitializeComponent();
+            LoadData(query);
+            pnl_Edit.Visible = false;   
+        }
         private void LoadData(string query = "select * from StudentDetail")
         {
             MyDB myDB = new MyDB();
@@ -213,5 +219,9 @@ namespace textPicture
             picFace.Image = null;
         }
 
+        private void ManageStudentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

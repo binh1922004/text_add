@@ -12,6 +12,7 @@ namespace textPicture
 {
     public partial class UserMainForm : Form
     {
+        Contact contact = new Contact();
         Group group = new Group();
         public UserMainForm()
         {
@@ -33,6 +34,8 @@ namespace textPicture
 
         private void UserMainForm_Load(object sender, EventArgs e)
         {
+            lbl_Welcome.Text += GlobalClass.userName + "(" + GlobalClass.ID + ")";
+            pic_Avatar.Image = GlobalClass.img;
             loadDataToCBB();
         }
 
@@ -67,8 +70,35 @@ namespace textPicture
             EditContactModuleForm editContactModuleForm = new EditContactModuleForm();
             if (editContactModuleForm.ShowDialog() == DialogResult.OK)
             {
-                txt
+                txt_contactID.Text = GlobalClass.contactID;
             }
+        }
+
+        private void btn_RemoveContact_Click(object sender, EventArgs e)
+        {
+            contact.removeContact(txt_contactID.Text);
+        }
+
+        private void btn_Remove_Click(object sender, EventArgs e)
+        {
+            string id = cbb_EditGroup.SelectedValue.ToString();
+            group.deleteGroup(id);
+            loadDataToCBB();
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            string id = cbb_EditGroup.SelectedValue.ToString();
+            string name = txt_EditGroupName.Text;
+            group.updateGroup(id, name);
+            txt_EditGroupName.Text = "";
+            loadDataToCBB();
+        }
+
+        private void btn_Show_Click(object sender, EventArgs e)
+        {
+            ShowFullListByGroupForm showFullListByGroupForm = new ShowFullListByGroupForm();
+            showFullListByGroupForm.ShowDialog();
         }
     }
 }

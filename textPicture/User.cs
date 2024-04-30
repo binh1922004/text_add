@@ -46,7 +46,7 @@ namespace textPicture
 
         public bool existUser(string id, string user)
         {
-            string query = "select * from UserData where id = @id and userid = @user";
+            string query = "select * from UserData where id = @id or userid = @user";
             SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
             sqlCmd.Parameters.Add(new SqlParameter("@id", System.Data.SqlDbType.Int)).Value = id;
             sqlCmd.Parameters.Add(new SqlParameter("@user", System.Data.SqlDbType.VarChar)).Value = user;
@@ -69,7 +69,7 @@ namespace textPicture
             {
                 if (verif(id, fn, ln, user, pass))
                 {
-                    string query = "insert into UserData values(@id, @fn, @ln, @user, @pass, @img)";
+                    string query = "insert into UserData values(@id, @fn, @ln, @user, @pass, @img, @role, 'waiting')";
                     SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
                     sqlCmd.Parameters.Add(new SqlParameter("@id", SqlDbType.Int)).Value = id;
                     sqlCmd.Parameters.Add(new SqlParameter("@fn", SqlDbType.VarChar)).Value = fn;
@@ -77,6 +77,7 @@ namespace textPicture
                     sqlCmd.Parameters.Add(new SqlParameter("@user", SqlDbType.VarChar)).Value = user;
                     sqlCmd.Parameters.Add(new SqlParameter("@pass", SqlDbType.VarChar)).Value = pass;
                     sqlCmd.Parameters.Add(new SqlParameter("@img", SqlDbType.Image)).Value = pic.ToArray();
+                    sqlCmd.Parameters.Add(new SqlParameter("@role", SqlDbType.VarChar)).Value = GlobalClass.role;
                     db.OpenConnection();
                     int k = sqlCmd.ExecuteNonQuery();
                     if (k > 0)
@@ -98,10 +99,12 @@ namespace textPicture
         }
         public bool loginCheck(string user, string pas)
         {
-            string query = "select * from UserData where pass = @pas and userid = @user";
+            string query = "select * from UserData where pass = @pas and userid = @user and role = @role";
             SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
             sqlCmd.Parameters.Add(new SqlParameter("@pas", System.Data.SqlDbType.VarChar)).Value = pas;
             sqlCmd.Parameters.Add(new SqlParameter("@user", System.Data.SqlDbType.VarChar)).Value = user;
+            sqlCmd.Parameters.Add(new SqlParameter("@role", SqlDbType.VarChar)).Value = GlobalClass.role;
+
             db.OpenConnection();
 
             SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
@@ -112,11 +115,18 @@ namespace textPicture
             db.CloseConnection();
             if (dt.Rows.Count > 0)
             {
-                GlobalClass.userID = dt.Rows[0]["id"].ToString();
+                if (dt.Rows[0]["stt"].ToString() == "waiting")
+                {
+                    MessageBox.Show("User not accecpted");
+                    return false;
+                }
+
+                GlobalClass.ID = dt.Rows[0]["id"].ToString();
                 GlobalClass.userName = dt.Rows[0]["fname"].ToString();
-                var data = (byte[])dt.Rows[0]["Img"];
-                var pic = new MemoryStream(data);
-                GlobalClass.img = Image.FromStream(pic);
+                GlobalClass.userID = dt.Rows[0]["userid"].ToString();
+                //var data = (byte[])dt.Rows[0]["Img"];
+                //var pic = new MemoryStream(data);
+                //GlobalClass.img = Image.FromStream(pic);
                 return true;
             }
             else

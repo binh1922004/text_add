@@ -17,7 +17,7 @@ namespace textPicture
         {
             InitializeComponent();
             role = Role;
-            if (role == "user")
+            if (role == "std")
             {
                 menu_Admin.Enabled = false;
             }

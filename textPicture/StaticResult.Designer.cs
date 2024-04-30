@@ -33,9 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_Score = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_Pass = new System.Windows.Forms.Label();
             this.lbl_Fail = new System.Windows.Forms.Label();
+            this.lbl_Pass = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pnl_Score.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,9 +69,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 36);
+            this.label2.Size = new System.Drawing.Size(213, 36);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Static by course";
+            this.label2.Text = "AVG by course";
             // 
             // pnl_Score
             // 
@@ -93,15 +93,14 @@
             this.panel2.Size = new System.Drawing.Size(388, 430);
             this.panel2.TabIndex = 6;
             // 
-            // label3
+            // lbl_Fail
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 36);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Static by result";
+            this.lbl_Fail.AutoSize = true;
+            this.lbl_Fail.Location = new System.Drawing.Point(68, 116);
+            this.lbl_Fail.Name = "lbl_Fail";
+            this.lbl_Fail.Size = new System.Drawing.Size(46, 20);
+            this.lbl_Fail.TabIndex = 6;
+            this.lbl_Fail.Text = "Fail: ";
             // 
             // lbl_Pass
             // 
@@ -112,14 +111,15 @@
             this.lbl_Pass.TabIndex = 5;
             this.lbl_Pass.Text = "Pass: ";
             // 
-            // lbl_Fail
+            // label3
             // 
-            this.lbl_Fail.AutoSize = true;
-            this.lbl_Fail.Location = new System.Drawing.Point(68, 116);
-            this.lbl_Fail.Name = "lbl_Fail";
-            this.lbl_Fail.Size = new System.Drawing.Size(46, 20);
-            this.lbl_Fail.TabIndex = 6;
-            this.lbl_Fail.Text = "Fail: ";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(210, 36);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Static by result";
             // 
             // StaticResult
             // 
@@ -130,7 +130,7 @@
             this.Controls.Add(this.pnl_Score);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StaticResult";
             this.Text = "StaticResult";
             this.Load += new System.EventHandler(this.StaticResult_Load);

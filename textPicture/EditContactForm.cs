@@ -25,7 +25,7 @@ namespace textPicture
             EditContactModuleForm editContactModuleForm = new EditContactModuleForm();
             if (editContactModuleForm.ShowDialog() == DialogResult.OK)
             {
-                string id = GlobalClass.userID;
+                string id = GlobalClass.contactID;
                 txt_ID.Text = id;
                 DataTable dt = new DataTable();
                 dt = contact.getContactByID(id);
@@ -49,6 +49,22 @@ namespace textPicture
             cbb_Group.DataSource = dt;
             cbb_Group.DisplayMember = "name";
             cbb_Group.ValueMember = "id";
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            string id = txt_ID.Text;
+            string fn = txt_Fname.Text;
+            string ln = txt_Lname.Text;
+            string gr = cbb_Group.SelectedValue.ToString();
+            string phone = txt_Phone.Text;
+            string mail = txt_Mail.Text;
+            string add = txt_Add.Text;
+
+            MemoryStream pic = new MemoryStream();
+            pic_Face.Image.Save(pic, pic_Face.Image.RawFormat);
+
+            contact.updateContact(id, fn, ln, gr, phone, mail, add, pic);
         }
     }
 }

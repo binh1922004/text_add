@@ -18,12 +18,10 @@ namespace textPicture
         {
             InitializeComponent();
         }
-
+        string query = "select id, fname, lname, userid, role, stt from UserData where id != " + GlobalClass.ID;
         private void AdminForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'universityManageDataSet.DataUser' table. You can move, or remove it, as needed.
-            this.dataUserTableAdapter.Fill(this.universityManageDataSet.DataUser);
-            LoadData("select * from DataUser where Status != 'admin'");
+            LoadData(query);
         }
 
         private void LoadData(string query)
@@ -40,12 +38,14 @@ namespace textPicture
         {
             if (e.RowIndex >= 0)
             {
-                string stt = dgv_DataUser.Rows[e.RowIndex].Cells[2].Value.ToString();
-                if (stt == "user")
+                string stt = dgv_DataUser.Rows[e.RowIndex].Cells[3].Value.ToString();
+                if (stt == "ok")
                 {
                     btn_AC.Enabled = false;
                 }
-                id = dgv_DataUser.Rows[e.RowIndex].Cells[0].Value.ToString();
+                else
+                    btn_AC.Enabled = true;
+                id = dgv_DataUser.Rows[e.RowIndex].Cells["idTbl"].Value.ToString();
             }
         }
 
@@ -55,14 +55,13 @@ namespace textPicture
             {
                 try
                 {
-                    string query = "update DataUser set Status = 'user' where ID = '" + id + "'";
+                    string query = "update UserData set stt = 'ok' where id = '" + id + "'";
                     SqlCommand sqlCmd = new SqlCommand(query, db.SqlCon);
                     db.OpenConnection();
                     int k = sqlCmd.ExecuteNonQuery();
                     if (k > 0)
                     {
                         MessageBox.Show("successfull update");
-                        LoadData("select * from DataUser where Status != 'admin'");
                     }
                     else
                     {
@@ -93,7 +92,7 @@ namespace textPicture
                     if (k > 0)
                     {
                         MessageBox.Show("successfull delete");
-                        LoadData("select * from DataUser where Status != 'admin'");
+                        LoadData(query);
                     }
                     else
                     {
@@ -109,6 +108,11 @@ namespace textPicture
                     db.CloseConnection();
                 }
             }
+        }
+
+        private void btn_Refesh_Click(object sender, EventArgs e)
+        {
+            LoadData(query);
         }
     }
 }

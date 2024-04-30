@@ -182,6 +182,7 @@
             // 
             // pic_Face
             // 
+            this.pic_Face.Image = global::textPicture.Properties.Resources.logofit;
             this.pic_Face.Location = new System.Drawing.Point(146, 446);
             this.pic_Face.Name = "pic_Face";
             this.pic_Face.Size = new System.Drawing.Size(159, 107);
@@ -261,7 +262,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddContactForm";
             this.Text = "AddContactForm";
             this.Load += new System.EventHandler(this.AddContactForm_Load);
