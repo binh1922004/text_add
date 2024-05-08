@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,40 +14,67 @@ namespace textPicture
     public partial class ShowCourseForm : Form
     {
         Course course = new Course();
+        Student std = new Student();
+        Score score = new Score();  
         public ShowCourseForm()
         {
             InitializeComponent();
-            loadData();
-        }
-
-
-        private void loadData()
-        {
-            DataTable dt = new DataTable();
-            string query = "select id, label, period, description from Course where contactID = " + GlobalClass.contactID;
-            dt = course.getAllCourse(query).Tables["tblCourse"];
-            dgv_CourseData.DataSource = dt;
-
             //load name contact
             lbl_ContactName.Text += GlobalClass.contactName;
+            loadDataListBox();
         }
 
-        private void dgv_CourseData_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void loadDataDGV(string courseID)
         {
-            if (e.RowIndex < 0)
-                return;
-            string cID = dgv_CourseData.Rows[e.RowIndex].Cells[0].Value.ToString();
-            //list ra student in course
-            string query = "select std.StudentID, std.FirstName, std.LastName, std.BirthDate, std.Sex, std.Phone, " +
-                "std.[Address], std.Email, std.Face " +
-                "from STUDENTDETAIL std " +
-                "join CourseRegister cg on cg.StudentID = std.StudentID " +
-                "where cg.CourseID = " + cID;
+            string query = "select s.StudentID, s.FirstName, s.LastName from STUDENTDETAIL s\r\njoin CourseRegister cg on s.StudentID = cg.StudentID\r\nwhere cg.CourseID = " + courseID;
+            DataTable dt = new DataTable();
+            dt = std.getAllStudent(query);
+            dt.Columns.Add("STT");
+            dt.Columns.Add("Score");
 
-            StudentListForm stdListForm = new StudentListForm(query);
-            this.Hide();
-            stdListForm.ShowDialog();
-            this.Show();
+
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                dt.Rows[i]["STT"] = i + 1;
+                string sid = dt.Rows[i]["StudentID"].ToString();
+                string small_query = "select course_id, score from Score where student_id = '" + sid + "' and course_id = '" + courseID + "'";
+                DataTable small_dt = score.getScoreTable(small_query);
+                dt.Rows[i]["Score"] = small_dt.Rows[0]["score"];
+            }
+            dgv_Data.DataSource = dt;
+        }
+
+        private void loadDataListBox()
+        {
+            string query = "select id, label, period, semester, description from Course where contactID = " + GlobalClass.contactID;
+            DataTable dt = new DataTable();
+            dt = course.getAllCourse(query).Tables["tblCourse"];
+            lsb_Course.ValueMember = "id";
+            lsb_Course.DisplayMember = "label";
+            lsb_Course.SelectedValue = null;
+            lsb_Course.DataSource = dt;
+
+        }
+
+
+        private void lsb_Course_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lsb_Course.SelectedItems.Count <= 0)
+                return;
+
+            string cid = lsb_Course.SelectedValue.ToString();
+            loadDataDGV(cid);
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    if (row["id"].ToString() == cid)
+            //    {
+            //        string label = row["label"].ToString();
+            //        string semester = row["semester"].ToString();
+
+            //        break;
+            //    }
+            //}
         }
     }
 }

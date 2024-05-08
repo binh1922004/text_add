@@ -35,7 +35,7 @@ namespace textPicture
                 MessageBox.Show("Please enter only number in phone number");
                 return false;
             }
-            else if (phone.Length < 10)
+            else if (phone.Length < 10 || phone.Length > 10)
             {
                 MessageBox.Show("Please enter 10 number in ID");
                 return false;

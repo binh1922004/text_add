@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_ContactName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_CourseData = new System.Windows.Forms.DataGridView();
+            this.lsb_Course = new System.Windows.Forms.ListBox();
+            this.dgv_Data = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_ContactName = new System.Windows.Forms.Label();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CourseData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -48,79 +50,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 61);
+            this.panel1.Size = new System.Drawing.Size(926, 61);
             this.panel1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(312, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "List course";
-            // 
-            // dgv_CourseData
-            // 
-            this.dgv_CourseData.AllowUserToAddRows = false;
-            this.dgv_CourseData.AllowUserToDeleteRows = false;
-            this.dgv_CourseData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_CourseData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
-            this.dgv_CourseData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_CourseData.Location = new System.Drawing.Point(0, 61);
-            this.dgv_CourseData.Name = "dgv_CourseData";
-            this.dgv_CourseData.ReadOnly = true;
-            this.dgv_CourseData.RowHeadersWidth = 51;
-            this.dgv_CourseData.RowTemplate.Height = 24;
-            this.dgv_CourseData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_CourseData.Size = new System.Drawing.Size(800, 420);
-            this.dgv_CourseData.TabIndex = 12;
-            this.dgv_CourseData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CourseData_CellClick);
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "Course ID";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 95;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column2.DataPropertyName = "label";
-            this.Column2.HeaderText = "Course name";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 116;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.DataPropertyName = "period";
-            this.Column3.HeaderText = "Period";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 76;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "description";
-            this.Column4.HeaderText = "Description";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // lbl_ContactName
             // 
@@ -133,18 +64,108 @@
             this.lbl_ContactName.TabIndex = 1;
             this.lbl_ContactName.Text = "Contact name: ";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(312, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "List course";
+            // 
+            // lsb_Course
+            // 
+            this.lsb_Course.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lsb_Course.FormattingEnabled = true;
+            this.lsb_Course.ItemHeight = 16;
+            this.lsb_Course.Location = new System.Drawing.Point(0, 61);
+            this.lsb_Course.Name = "lsb_Course";
+            this.lsb_Course.Size = new System.Drawing.Size(261, 507);
+            this.lsb_Course.TabIndex = 12;
+            this.lsb_Course.SelectedIndexChanged += new System.EventHandler(this.lsb_Course_SelectedIndexChanged);
+            // 
+            // dgv_Data
+            // 
+            this.dgv_Data.AllowUserToAddRows = false;
+            this.dgv_Data.AllowUserToDeleteRows = false;
+            this.dgv_Data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Data.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.id,
+            this.Column3,
+            this.Column4,
+            this.Column2});
+            this.dgv_Data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_Data.Location = new System.Drawing.Point(261, 61);
+            this.dgv_Data.Name = "dgv_Data";
+            this.dgv_Data.ReadOnly = true;
+            this.dgv_Data.RowHeadersWidth = 51;
+            this.dgv_Data.RowTemplate.Height = 24;
+            this.dgv_Data.Size = new System.Drawing.Size(665, 507);
+            this.dgv_Data.TabIndex = 13;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "STT";
+            this.Column1.HeaderText = "STT";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.id.DataPropertyName = "StudentID";
+            this.id.HeaderText = "Student id";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 95;
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column3.DataPropertyName = "FirstName";
+            this.Column3.HeaderText = "First name";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 98;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.DataPropertyName = "LastName";
+            this.Column4.HeaderText = "Last name";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Score";
+            this.Column2.HeaderText = "Score";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
             // ShowCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 481);
-            this.Controls.Add(this.dgv_CourseData);
+            this.ClientSize = new System.Drawing.Size(926, 568);
+            this.Controls.Add(this.dgv_Data);
+            this.Controls.Add(this.lsb_Course);
             this.Controls.Add(this.panel1);
             this.Name = "ShowCourseForm";
             this.Text = "ShowCourseForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_CourseData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Data)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -153,11 +174,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_CourseData;
+        private System.Windows.Forms.Label lbl_ContactName;
+        private System.Windows.Forms.ListBox lsb_Course;
+        private System.Windows.Forms.DataGridView dgv_Data;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label lbl_ContactName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }
